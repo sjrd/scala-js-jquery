@@ -3,6 +3,8 @@ package org.scalajs.jquery
 import scala.scalajs.js
 import org.scalajs.dom._
 
+import js.annotation.JSName
+
 trait JQueryAjaxSettings extends js.Object {
   var accepts: js.Any = _
   var async: js.Boolean = _
@@ -262,6 +264,10 @@ trait JQuery extends js.Object {
   def `val`(value: js.Array[js.String]): JQuery = ???
   def `val`(value: js.String): JQuery = ???
   def `val`(func: js.Function2[js.Any, js.Any, js.Any]): JQuery = ???
+  @JSName("val") def value(): js.Dynamic = ???
+  @JSName("val") def value(value: js.Array[js.String]): JQuery = ???
+  @JSName("val") def value(value: js.String): JQuery = ???
+  @JSName("val") def value(func: js.Function2[js.Any, js.Any, js.Any]): JQuery = ???
   def css(propertyNames: js.Array[js.Any]): js.String = ???
   def css(propertyName: js.String): js.String = ???
   def css(propertyName: js.String, value: js.Any): JQuery = ???
