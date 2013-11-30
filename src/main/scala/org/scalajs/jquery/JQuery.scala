@@ -586,7 +586,3 @@ trait JQuery extends js.Object {
   def slice(start: js.Number, end: js.Number): JQuery = ???
   def slice(start: js.Number): JQuery = ???
 }
-
-@js.annotation.JSName("jQuery")
-object JQuery extends JQueryStatic {
-}
