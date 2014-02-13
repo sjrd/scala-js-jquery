@@ -4,14 +4,14 @@ name := "Scala.js jQuery"
 
 normalizedName := "scalajs-jquery"
 
-version := "0.2-SNAPSHOT"
+version := "0.2"
 
 organization := "org.scala-lang.modules.scalajs"
 
 crossScalaVersions := Seq("2.10.2", "2.11.0-M7")
 
 libraryDependencies +=
-  "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.2-SNAPSHOT"
+  "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.2"
 
 homepage := Some(url("http://scala-js.org/"))
 
