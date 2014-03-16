@@ -8,7 +8,7 @@ Usage
 
 Add the following to your sbt build definition:
 
-    libraryDependencies += "org.scala-lang.modules.scalajs" %% "scalajs-jquery" % "0.1-SNAPSHOT"
+    libraryDependencies += "org.scala-lang.modules.scalajs" %% "scalajs-jquery" % "0.3"
 
 then enjoy the types available in `org.scalajs.jquery`.
 
