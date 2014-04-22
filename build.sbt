@@ -8,7 +8,9 @@ version := "0.4-SNAPSHOT"
 
 organization := "org.scala-lang.modules.scalajs"
 
-crossScalaVersions := Seq("2.10.2", "2.11.0-M7", "2.11.0-M8")
+scalaVersion := "2.10.4"
+
+crossScalaVersions := Seq("2.10.4", "2.11.0")
 
 libraryDependencies +=
   "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.4-SNAPSHOT"
