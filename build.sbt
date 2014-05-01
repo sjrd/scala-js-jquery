@@ -13,7 +13,7 @@ scalaVersion := "2.11.0"
 crossScalaVersions := Seq("2.10.4", "2.11.0")
 
 libraryDependencies +=
-  "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.5-SNAPSHOT"
+  "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.5-SNAPSHOT"
 
 homepage := Some(url("http://scala-js.org/"))
 
