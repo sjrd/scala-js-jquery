@@ -96,9 +96,9 @@ trait JQueryEventObject extends Event {
   var result: js.Any = _
   override def stopImmediatePropagation(): Unit = ??? // js.Dynamic
   override def stopPropagation(): Unit = ??? // js.Dynamic
-  var pageX: Double = _
-  var pageY: Double = _
-  var which: Double = _
+  var pageX: Int = _
+  var pageY: Int = _
+  var which: Int = _
   var metaKey: js.Any = _
 }
 
@@ -133,7 +133,7 @@ trait JQuerySupport extends js.Object {
 }
 
 trait JQueryTransport extends js.Object {
-  def send(headers: js.Any, completeCallback: js.Function4[Double, String, js.Any, String, Unit]): Unit = ???
+  def send(headers: js.Any, completeCallback: js.Function4[Int, String, js.Any, String, Unit]): Unit = ???
   def abort(): Unit = ???
 }
 
@@ -203,8 +203,8 @@ trait JQueryStatic extends js.Object {
   def extend(deep: Boolean, target: js.Any, objs: js.Any*): Object = ???
   def globalEval(code: String): js.Dynamic = ???
   def grep(array: js.Array[js.Any], func: js.Any, invert: Boolean): js.Array[js.Any] = ???
-  def inArray(value: js.Any, array: js.Array[js.Any], fromIndex: Double): Double = ???
-  def inArray(value: js.Any, array: js.Array[js.Any]): Double = ???
+  def inArray(value: js.Any, array: js.Array[js.Any], fromIndex: Int): Int = ???
+  def inArray(value: js.Any, array: js.Array[js.Any]): Int = ???
   def isArray(obj: js.Any): Boolean = ???
   def isEmptyObject(obj: js.Any): Boolean = ???
   def isFunction(obj: js.Any): Boolean = ???
@@ -286,10 +286,10 @@ trait JQuery extends js.Object {
   def outerWidth(includeMargin: Boolean): Double = ???
   def outerWidth(): Double = ???
   def position(): js.Any = ???
-  def scrollLeft(): Double = ???
-  def scrollLeft(value: Double): JQuery = ???
-  def scrollTop(): Double = ???
-  def scrollTop(value: Double): JQuery = ???
+  def scrollLeft(): Int = ???
+  def scrollLeft(value: Int): JQuery = ???
+  def scrollTop(): Int = ???
+  def scrollTop(value: Int): JQuery = ???
   def width(): Double = ???
   def width(value: Double): JQuery = ???
   def width(func: js.Function2[js.Any, js.Any, js.Any]): JQuery = ???
@@ -314,8 +314,8 @@ trait JQuery extends js.Object {
   def animate(properties: js.Any, duration: js.Any, easing: String): JQuery = ???
   def animate(properties: js.Any, duration: js.Any): JQuery = ???
   def animate(properties: js.Any): JQuery = ???
-  def delay(duration: Double, queueName: String): JQuery = ???
-  def delay(duration: Double): JQuery = ???
+  def delay(duration: Int, queueName: String): JQuery = ???
+  def delay(duration: Int): JQuery = ???
   def fadeIn(duration: js.Any, callback: js.Any): JQuery = ???
   def fadeIn(duration: js.Any): JQuery = ???
   def fadeIn(): JQuery = ???
@@ -514,15 +514,15 @@ trait JQuery extends js.Object {
   def wrapInner(wrappingElement: js.Any): JQuery = ???
   def wrapInner(func: js.Function1[js.Any, js.Any]): JQuery = ???
   def each(func: js.Function2[js.Any, Element, js.Any]): JQuery = ???
-  def get(index: Double): js.Dynamic = ???
+  def get(index: Int): js.Dynamic = ???
   def get(): js.Dynamic = ???
-  def index(selectorOrElement: js.Any): Double = ???
-  def index(): Double = ???
-  var length: Double = _
+  def index(selectorOrElement: js.Any): Int = ???
+  def index(): Int = ???
+  var length: Int = _
   @js.annotation.JSBracketAccess
-  def apply(x: Double): HTMLElement = ???
+  def apply(x: Int): HTMLElement = ???
   @js.annotation.JSBracketAccess
-  def update(x: Double, v: HTMLElement): Unit = ???
+  def update(x: Int, v: HTMLElement): Unit = ???
   def add(selector: String, context: js.Any): JQuery = ???
   def add(selector: String): JQuery = ???
   def add(elements: js.Any*): JQuery = ???
@@ -538,7 +538,7 @@ trait JQuery extends js.Object {
   def closest(selectors: js.Any, context: Element): js.Array[js.Any] = ???
   def contents(): JQuery = ???
   def end(): JQuery = ???
-  def eq(index: Double): JQuery = ???
+  def eq(index: Int): JQuery = ???
   def filter(selector: String): JQuery = ???
   def filter(func: js.Function1[js.Any, js.Any]): JQuery = ???
   def filter(element: js.Any): JQuery = ???
@@ -589,6 +589,6 @@ trait JQuery extends js.Object {
   def prevUntil(element: Element): JQuery = ???
   def siblings(selector: String): JQuery = ???
   def siblings(): JQuery = ???
-  def slice(start: Double, end: Double): JQuery = ???
-  def slice(start: Double): JQuery = ???
+  def slice(start: Int, end: Int): JQuery = ???
+  def slice(start: Int): JQuery = ???
 }
