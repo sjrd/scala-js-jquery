@@ -62,12 +62,8 @@ trait JQueryPromise extends js.Object {
   def always(alwaysCallbacks: js.Any*): JQueryDeferred = ???
   def done(doneCallbacks: js.Any*): JQueryDeferred = ???
   def fail(failCallbacks: js.Any*): JQueryDeferred = ???
-  def pipe(doneFilter: js.Function1[js.Any, js.Any], failFilter: js.Function1[js.Any, js.Any], progressFilter: js.Function1[js.Any, js.Any]): JQueryPromise = ???
-  def pipe(doneFilter: js.Function1[js.Any, js.Any], failFilter: js.Function1[js.Any, js.Any]): JQueryPromise = ???
-  def pipe(doneFilter: js.Function1[js.Any, js.Any]): JQueryPromise = ???
-  def pipe(): JQueryPromise = ???
-  def `then`(doneCallbacks: js.Any, failCallbacks: js.Any, progressCallbacks: js.Any): JQueryDeferred = ???
-  def `then`(doneCallbacks: js.Any, failCallbacks: js.Any): JQueryDeferred = ???
+  def pipe(doneFilter: js.Function1[js.Any, js.Any] = ???, failFilter: js.Function1[js.Any, js.Any] = ???, progressFilter: js.Function1[js.Any, js.Any] = ???): JQueryPromise = ???
+  def `then`(doneCallbacks: js.Any, failCallbacks: js.Any, progressCallbacks: js.Any = ???): JQueryDeferred = ???
 }
 
 trait JQueryDeferred extends JQueryPromise {
@@ -79,9 +75,6 @@ trait JQueryDeferred extends JQueryPromise {
   def resolve(args: js.Any*): JQueryDeferred = ???
   def resolveWith(context: js.Any, args: js.Any*): JQueryDeferred = ???
   def state(): String = ???
-  override def `then`(doneCallbacks: js.Any, failCallbacks: js.Any, progressCallbacks: js.Any): JQueryDeferred = ???
-  override def `then`(doneCallbacks: js.Any, failCallbacks: js.Any): JQueryDeferred = ???
-  def `then`(doneCallbacks: js.Any): JQueryDeferred = ???
 }
 
 trait JQueryEventObject extends Event {
@@ -144,21 +137,11 @@ trait JQueryStatic extends js.Object {
   def ajaxPrefilter(handler: js.Function3[js.Any, js.Any, JQueryXHR, js.Any]): js.Dynamic = ???
   def ajaxSetup(options: js.Any): js.Dynamic = ???
   def ajaxTransport(dataType: String, handler: js.Function3[JQueryAjaxSettings, JQueryAjaxSettings, JQueryXHR, JQueryTransport]): Unit = ???
-  def get(url: String, data: js.Any, success: js.Any, dataType: js.Any): JQueryXHR = ???
-  def get(url: String, data: js.Any, success: js.Any): JQueryXHR = ???
-  def get(url: String, data: js.Any): JQueryXHR = ???
-  def get(url: String): JQueryXHR = ???
-  def getJSON(url: String, data: js.Any, success: js.Any): JQueryXHR = ???
-  def getJSON(url: String, data: js.Any): JQueryXHR = ???
-  def getJSON(url: String): JQueryXHR = ???
-  def getScript(url: String, success: js.Any): JQueryXHR = ???
-  def getScript(url: String): JQueryXHR = ???
-  def param(obj: js.Any): String = ???
-  def param(obj: js.Any, traditional: Boolean): String = ???
-  def post(url: String, data: js.Any, success: js.Any, dataType: js.Any): JQueryXHR = ???
-  def post(url: String, data: js.Any, success: js.Any): JQueryXHR = ???
-  def post(url: String, data: js.Any): JQueryXHR = ???
-  def post(url: String): JQueryXHR = ???
+  def get(url: String, data: js.Any = ???, success: js.Any = ???, dataType: js.Any = ???): JQueryXHR = ???
+  def getJSON(url: String, data: js.Any = ???, success: js.Any = ???): JQueryXHR = ???
+  def getScript(url: String, success: js.Any = ???): JQueryXHR = ???
+  def param(obj: js.Any, traditional: Boolean = ???): String = ???
+  def post(url: String, data: js.Any = ???, success: js.Any = ???, dataType: js.Any = ???): JQueryXHR = ???
   def Callbacks(flags: js.Any): JQueryCallback = ???
   def holdReady(hold: Boolean): js.Dynamic = ???
   def apply(selector: String, context: js.Any): JQuery = ???
@@ -169,8 +152,7 @@ trait JQueryStatic extends js.Object {
   def apply(`object`: JQuery): JQuery = ???
   def apply(func: js.Function): JQuery = ???
   def apply(): JQuery = ???
-  def noConflict(removeAll: Boolean): Object = ???
-  def noConflict(): Object = ???
+  def noConflict(removeAll: Boolean = ???): Object = ???
   def when(deferreds: js.Any*): JQueryPromise = ???
   def css(e: js.Any, propertyName: String, value: js.Any): js.Dynamic = ???
   def css(e: js.Any, propertyName: String): js.Dynamic = ???
@@ -178,16 +160,12 @@ trait JQueryStatic extends js.Object {
   def css(e: js.Any, propertyName: js.Any): js.Dynamic = ???
   var cssHooks: js.Any = _
   def data(element: Element, key: String, value: js.Any): Object = ???
-  def dequeue(element: Element, queueName: String): js.Dynamic = ???
-  def dequeue(element: Element): js.Dynamic = ???
+  def dequeue(element: Element, queueName: String = ???): js.Dynamic = ???
   def hasData(element: Element): Boolean = ???
-  def queue(element: Element, queueName: String): js.Array[js.Any] = ???
-  def queue(element: Element): js.Array[js.Any] = ???
+  def queue(element: Element, queueName: String = ???): js.Array[js.Any] = ???
   def queue(element: Element, queueName: String, newQueueOrCallback: js.Any): JQuery = ???
-  def removeData(element: Element, name: String): JQuery = ???
-  def removeData(element: Element): JQuery = ???
-  def Deferred(beforeStart: js.Function1[JQueryDeferred, js.Any]): JQueryDeferred = ???
-  def Deferred(): JQueryDeferred = ???
+  def removeData(element: Element, name: String = ???): JQuery = ???
+  def Deferred(beforeStart: js.Function1[JQueryDeferred, js.Any] = ???): JQueryDeferred = ???
   var fx: js.Any = _
   def proxy(func: js.Function, context: js.Any): js.Dynamic = ???
   def proxy(context: js.Any, name: String): js.Dynamic = ???
@@ -203,8 +181,7 @@ trait JQueryStatic extends js.Object {
   def extend(deep: Boolean, target: js.Any, objs: js.Any*): Object = ???
   def globalEval(code: String): js.Dynamic = ???
   def grep(array: js.Array[js.Any], func: js.Any, invert: Boolean): js.Array[js.Any] = ???
-  def inArray(value: js.Any, array: js.Array[js.Any], fromIndex: Int): Int = ???
-  def inArray(value: js.Any, array: js.Array[js.Any]): Int = ???
+  def inArray(value: js.Any, array: js.Array[js.Any], fromIndex: Int = ???): Int = ???
   def isArray(obj: js.Any): Boolean = ???
   def isEmptyObject(obj: js.Any): Boolean = ???
   def isFunction(obj: js.Any): Boolean = ???
@@ -217,9 +194,7 @@ trait JQueryStatic extends js.Object {
   def merge(first: js.Array[js.Any], second: js.Array[js.Any]): js.Array[js.Any] = ???
   def noop(): js.Dynamic = ???
   def now(): Double = ???
-  def parseHTML(data: String, context: Element, keepScripts: Boolean): js.Array[js.Any] = ???
-  def parseHTML(data: String, context: Element): js.Array[js.Any] = ???
-  def parseHTML(data: String): js.Array[js.Any] = ???
+  def parseHTML(data: String, context: Element = ???, keepScripts: Boolean = ???): js.Array[js.Any] = ???
   def parseJSON(json: String): js.Dynamic = ???
   def parseXML(data: String): js.Dynamic = ???
   def queue(element: Element, queueName: String, newQueue: js.Array[js.Any]): JQuery = ???
@@ -281,10 +256,8 @@ trait JQuery extends js.Object {
   def offset(): js.Any = ???
   def offset(coordinates: js.Any): JQuery = ???
   def offset(func: js.Function2[js.Any, js.Any, js.Any]): JQuery = ???
-  def outerHeight(includeMargin: Boolean): Double = ???
-  def outerHeight(): Double = ???
-  def outerWidth(includeMargin: Boolean): Double = ???
-  def outerWidth(): Double = ???
+  def outerHeight(includeMargin: Boolean = ???): Double = ???
+  def outerWidth(includeMargin: Boolean = ???): Double = ???
   def position(): js.Any = ???
   def scrollLeft(): Int = ???
   def scrollLeft(value: Int): JQuery = ???
@@ -307,69 +280,32 @@ trait JQuery extends js.Object {
   def queue(newQueueOrCallback: js.Any): JQuery = ???
   def removeData(nameOrList: js.Any): JQuery = ???
   def removeData(): JQuery = ???
-  def promise(`type`: js.Any, target: js.Any): JQueryPromise = ???
-  def promise(`type`: js.Any): JQueryPromise = ???
-  def promise(): JQueryPromise = ???
-  def animate(properties: js.Any, duration: js.Any, easing: String, complete: js.Function): JQuery = ???
-  def animate(properties: js.Any, duration: js.Any, easing: String): JQuery = ???
-  def animate(properties: js.Any, duration: js.Any): JQuery = ???
-  def animate(properties: js.Any): JQuery = ???
-  def delay(duration: Int, queueName: String): JQuery = ???
-  def delay(duration: Int): JQuery = ???
+  def promise(`type`: js.Any = ???, target: js.Any = ???): JQueryPromise = ???
+  def animate(properties: js.Any, duration: js.Any = ???, easing: String = ???, complete: js.Function = ???): JQuery = ???
+  def delay(duration: Int, queueName: String = ???): JQuery = ???
   def fadeIn(duration: js.Any, callback: js.Any): JQuery = ???
-  def fadeIn(duration: js.Any): JQuery = ???
-  def fadeIn(): JQuery = ???
-  def fadeIn(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def fadeIn(duration: js.Any, easing: String): JQuery = ???
+  def fadeIn(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
   def fadeOut(duration: js.Any, callback: js.Any): JQuery = ???
-  def fadeOut(duration: js.Any): JQuery = ???
-  def fadeOut(): JQuery = ???
-  def fadeOut(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def fadeOut(duration: js.Any, easing: String): JQuery = ???
+  def fadeOut(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
   def fadeTo(duration: js.Any, opacity: Double, callback: js.Any): JQuery = ???
-  def fadeTo(duration: js.Any, opacity: Double): JQuery = ???
-  def fadeTo(duration: js.Any, opacity: Double, easing: String, callback: js.Any): JQuery = ???
-  def fadeTo(duration: js.Any, opacity: Double, easing: String): JQuery = ???
-  def fadeToggle(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def fadeToggle(duration: js.Any, easing: String): JQuery = ???
-  def fadeToggle(duration: js.Any): JQuery = ???
-  def fadeToggle(): JQuery = ???
-  def finish(queue: String): JQuery = ???
-  def finish(): JQuery = ???
+  def fadeTo(duration: js.Any, opacity: Double = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
+  def fadeToggle(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
+  def finish(queue: String = ???): JQuery = ???
   def hide(duration: js.Any, callback: js.Any): JQuery = ???
-  def hide(duration: js.Any): JQuery = ???
-  def hide(): JQuery = ???
-  def hide(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def hide(duration: js.Any, easing: String): JQuery = ???
+  def hide(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
   def show(duration: js.Any, callback: js.Any): JQuery = ???
-  def show(duration: js.Any): JQuery = ???
-  def show(): JQuery = ???
-  def show(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def show(duration: js.Any, easing: String): JQuery = ???
+  def show(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
   def slideDown(duration: js.Any, callback: js.Any): JQuery = ???
-  def slideDown(duration: js.Any): JQuery = ???
-  def slideDown(): JQuery = ???
-  def slideDown(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def slideDown(duration: js.Any, easing: String): JQuery = ???
+  def slideDown(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
   def slideToggle(duration: js.Any, callback: js.Any): JQuery = ???
-  def slideToggle(duration: js.Any): JQuery = ???
-  def slideToggle(): JQuery = ???
-  def slideToggle(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def slideToggle(duration: js.Any, easing: String): JQuery = ???
+  def slideToggle(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
   def slideUp(duration: js.Any, callback: js.Any): JQuery = ???
-  def slideUp(duration: js.Any): JQuery = ???
-  def slideUp(): JQuery = ???
-  def slideUp(duration: js.Any, easing: String, callback: js.Any): JQuery = ???
-  def slideUp(duration: js.Any, easing: String): JQuery = ???
-  def stop(clearQueue: Boolean, jumpToEnd: Boolean): JQuery = ???
-  def stop(clearQueue: Boolean): JQuery = ???
-  def stop(): JQuery = ???
+  def slideUp(duration: js.Any = ???, easing: String = ???, callback: js.Any = ???): JQuery = ???
+  def stop(clearQueue: Boolean = ???, jumpToEnd: Boolean = ???): JQuery = ???
   def stop(queue: js.Any, clearQueue: Boolean, jumpToEnd: Boolean): JQuery = ???
   def stop(queue: js.Any, clearQueue: Boolean): JQuery = ???
   def stop(queue: js.Any): JQuery = ???
-  def bind(eventType: String, eventData: js.Any, handler: js.Function1[JQueryEventObject, js.Any]): JQuery = ???
-  def bind(eventType: String, eventData: js.Any): JQuery = ???
-  def bind(eventType: String): JQuery = ???
+  def bind(eventType: String, eventData: js.Any = ???, handler: js.Function1[JQueryEventObject, js.Any] = ???): JQuery = ???
   def bind(eventType: String, eventData: js.Any, preventBubble: Boolean): JQuery = ???
   def bind(eventType: String, preventBubble: Boolean): JQuery = ???
   def bind(events: js.Any*): js.Dynamic = ???
