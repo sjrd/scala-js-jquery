@@ -41,7 +41,7 @@ trait JQueryAjaxSettings extends js.Object {
   var xhrFields: js.Any = _
 }
 
-trait JQueryXHR extends XMLHttpRequest {
+trait JQueryXHR extends XMLHttpRequest with JQueryPromise {
   def overrideMimeType(): js.Dynamic = ???
 }
 
@@ -176,7 +176,8 @@ trait JQueryStatic extends js.Object {
   var browser: JQueryBrowserInfo = _
   var support: JQuerySupport = _
   def contains(container: Element, contained: Element): Boolean = ???
-  def each(collection: js.Any, callback: js.Function2[js.Any, js.Any, js.Any]): js.Dynamic = ???
+  def each(collection: js.Any, callback: js.Function2[Int, HTMLElement, Any]): js.Dynamic = ???
+  def each(collection: js.Any, callback: js.ThisFunction0[js.Any, Any]): js.Dynamic = ???
   def extend(target: js.Any, objs: js.Any*): Object = ???
   def extend(deep: Boolean, target: js.Any, objs: js.Any*): Object = ???
   def globalEval(code: String): js.Dynamic = ???
@@ -190,7 +191,8 @@ trait JQueryStatic extends js.Object {
   def isWindow(obj: js.Any): Boolean = ???
   def isXMLDoc(node: Node): Boolean = ???
   def makeArray(obj: js.Any): js.Array[js.Any] = ???
-  def map(array: js.Array[js.Any], callback: js.Function2[js.Any, js.Any, js.Any]): js.Array[js.Any] = ???
+  def map(array: js.Array[js.Any], callback: js.Function2[Int, HTMLElement, Any]): js.Array[Any] = ???
+  def map(array: js.Array[js.Any], callback: js.Function1[Int, Any]): js.Array[Any] = ???
   def merge(first: js.Array[js.Any], second: js.Array[js.Any]): js.Array[js.Any] = ???
   def noop(): js.Dynamic = ???
   def now(): Double = ???
@@ -449,7 +451,9 @@ trait JQuery extends js.Object {
   def wrapAll(wrappingElement: js.Any): JQuery = ???
   def wrapInner(wrappingElement: js.Any): JQuery = ???
   def wrapInner(func: js.Function1[js.Any, js.Any]): JQuery = ???
-  def each(func: js.Function2[js.Any, Element, js.Any]): JQuery = ???
+  def each(func: js.Function2[Int, HTMLElement, Any]): JQuery = ???
+  def each(func: js.Function1[Int, Any]): JQuery = ???
+  def each(func: js.ThisFunction0[js.Any, Any]): JQuery = ???
   def get(index: Int): js.Dynamic = ???
   def get(): js.Dynamic = ???
   def index(selectorOrElement: js.Any): Int = ???
@@ -476,7 +480,8 @@ trait JQuery extends js.Object {
   def end(): JQuery = ???
   def eq(index: Int): JQuery = ???
   def filter(selector: String): JQuery = ???
-  def filter(func: js.Function1[js.Any, js.Any]): JQuery = ???
+  def filter(func: js.Function2[Int, HTMLElement, js.Any]): JQuery = ???
+  def filter(func: js.Function1[Int, js.Any]): JQuery = ???
   def filter(element: js.Any): JQuery = ???
   def filter(obj: JQuery): JQuery = ???
   def find(selector: String): JQuery = ???
@@ -490,7 +495,9 @@ trait JQuery extends js.Object {
   def is(element: js.Any): Boolean = ???
   def is(obj: JQuery): Boolean = ???
   def last(): JQuery = ???
-  def map(callback: js.Function2[js.Any, Element, js.Any]): JQuery = ???
+  def map(callback: js.Function2[Int, HTMLElement, Any]): JQuery = ???
+  def map(callback: js.Function1[Int, Any]): JQuery = ???
+  def map(callback: js.ThisFunction0[js.Any, Any]): JQuery = ???
   def next(selector: String): JQuery = ???
   def next(): JQuery = ???
   def nextAll(selector: String): JQuery = ???
