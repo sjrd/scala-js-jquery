@@ -23,6 +23,13 @@ that you are constantly type casting the API and have confirmed that the jQuery
 API allows a specific type of object to be provided as a parameter, send a pull
 request to add that API enhancement.
 
+jQuery allows two types of elements, HTML elements and SVG elements. This API
+wrapper is biased towards HTML manipulation so you will see that for map/filter/each
+the HTMLElement has been used as a parameter or return value versus the more
+generic Element. This design choice is based on the desire to make HTML
+element manipulation better supported at the expense of the less common SVG
+scenario.
+
 
 License
 -------
