@@ -15,6 +15,22 @@ then enjoy the types available in `org.scalajs.jquery`.
 scalajs-jquery 0.6 is built and published for Scala.js 0.5.0 and following in
 the 0.5.x series, with both Scala 2.10 and 2.11.
 
+The API was generated automatically. The API often uses js.Any where other more
+specific types could be used but scala's type checking will prevent. In some cases
+you will need to cast to the appropriate type to allow compilation to succeed.
+jQuery allows many different types of parameters for the same function. If you find
+that you are constantly type casting the API and have confirmed that the jQuery
+API allows a specific type of object to be provided as a parameter, send a pull
+request to add that API enhancement.
+
+jQuery allows two types of elements, HTML elements and SVG elements. This API
+wrapper is biased towards HTML manipulation so you will see that for map/filter/each
+the HTMLElement has been used as a parameter or return value versus the more
+generic Element. This design choice is based on the desire to make HTML
+element manipulation better supported at the expense of the less common SVG
+scenario.
+
+
 License
 -------
 
