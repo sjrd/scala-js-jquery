@@ -1,3 +1,5 @@
+import bintray.Keys._
+
 lazy val root = project.in(file(".")).
   enablePlugins(ScalaJSPlugin)
 
@@ -7,7 +9,7 @@ normalizedName := "scalajs-jquery"
 
 version := "0.7.0-SNAPSHOT"
 
-organization := "org.scala-lang.modules.scalajs"
+organization := "be.doeraene"
 
 scalaVersion := "2.11.2"
 
@@ -24,3 +26,7 @@ jsDependencies in Test += RuntimeDOM
 homepage := Some(url("http://scala-js.org/"))
 
 licenses += ("BSD New", url("https://github.com/scala-js/scala-js/blob/master/LICENSE"))
+
+repository in bintray := "scala-js-releases"
+
+bintrayOrganization in bintray := Some("scala-js")
