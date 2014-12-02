@@ -1,4 +1,5 @@
-scalaJSSettings
+lazy val root = project.in(file(".")).
+  enablePlugins(ScalaJSPlugin)
 
 name := "Scala.js jQuery"
 
@@ -8,15 +9,17 @@ version := "0.7.0-SNAPSHOT"
 
 organization := "org.scala-lang.modules.scalajs"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.2"
 
-crossScalaVersions := Seq("2.10.4", "2.11.1")
+crossScalaVersions := Seq("2.10.4", "2.11.2")
 
 libraryDependencies +=
-  "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.6"
+  "org.scala-js" %%%! "scalajs-dom" % "0.7.0"
 
-ScalaJSKeys.jsDependencies +=
+jsDependencies +=
   "org.webjars" % "jquery" % "1.10.2" / "jquery.js"
+
+jsDependencies in Test += RuntimeDOM
 
 homepage := Some(url("http://scala-js.org/"))
 
