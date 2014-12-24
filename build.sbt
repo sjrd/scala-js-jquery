@@ -19,7 +19,7 @@ libraryDependencies +=
   "org.scala-js" %%%! "scalajs-dom" % "0.7.0"
 
 jsDependencies +=
-  "org.webjars" % "jquery" % "1.10.2" / "jquery.js"
+  "org.webjars" % "jquery" % "2.1.3" / "jquery.js"
 
 jsDependencies in Test += RuntimeDOM
 
