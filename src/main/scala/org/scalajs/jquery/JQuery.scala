@@ -1,6 +1,7 @@
 package org.scalajs.jquery
 
 import scala.scalajs.js
+import org.scalajs.dom
 import org.scalajs.dom._
 
 import js.annotation.JSName
@@ -456,9 +457,9 @@ trait JQuery extends js.Object {
   def index(): Int = js.native
   var length: Int = js.native
   @js.annotation.JSBracketAccess
-  def apply(x: Int): HTMLElement = js.native
+  def apply(x: Int): dom.html.Element = js.native
   @js.annotation.JSBracketAccess
-  def update(x: Int, v: HTMLElement): Unit = js.native
+  def update(x: Int, v: dom.html.Element): Unit = js.native
   def add(selector: String, context: js.Any): JQuery = js.native
   def add(selector: String): JQuery = js.native
   def add(elements: js.Any*): JQuery = js.native
