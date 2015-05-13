@@ -215,7 +215,7 @@ trait JQuery extends js.Object {
   def serializeArray(): js.Array[js.Any] = js.native
   def addClass(classNames: String): JQuery = js.native
   def addClass(func: js.Function2[js.Any, js.Any, JQuery]): js.Dynamic = js.native
-  def attr(attributeName: String): String = js.native
+  def attr(attributeName: String): js.UndefOr[String] = js.native
   def attr(attributeName: String, value: js.Any): JQuery = js.native
   def attr(map: js.Any): JQuery = js.native
   def attr(attributeName: String, func: js.Function2[js.Any, js.Any, js.Any]): JQuery = js.native
