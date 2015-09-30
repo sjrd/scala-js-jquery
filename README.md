@@ -8,11 +8,11 @@ Usage
 
 Add the following to your sbt build definition:
 
-    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.8.0"
+    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.8.1"
 
 then enjoy the types available in `org.scalajs.jquery`.
 
-scalajs-jquery 0.8.0 is built and published for Scala.js 0.6.x, with both
+scalajs-jquery 0.8.1 is built and published for Scala.js 0.6.x, with both
 Scala 2.10 and 2.11.
 
 License
