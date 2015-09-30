@@ -1,6 +1,6 @@
 language: scala
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION package
+  - sbt ++$TRAVIS_SCALA_VERSION package doc
 scala:
   - 2.10.5
   - 2.11.6
