@@ -6,6 +6,7 @@ import org.scalajs.dom._
 
 import js.annotation.JSName
 
+@js.native
 trait JQueryAjaxSettings extends js.Object {
   var accepts: js.Any = js.native
   var async: Boolean = js.native
@@ -42,10 +43,12 @@ trait JQueryAjaxSettings extends js.Object {
   var xhrFields: js.Any = js.native
 }
 
+@js.native
 trait JQueryXHR extends XMLHttpRequest {
   def overrideMimeType(): js.Dynamic = js.native
 }
 
+@js.native
 trait JQueryCallback extends js.Object {
   def add(callbacks: js.Any*): js.Dynamic = js.native
   def disable(): js.Dynamic = js.native
@@ -59,6 +62,7 @@ trait JQueryCallback extends js.Object {
   def removed(callbacks: js.Any*): js.Dynamic = js.native
 }
 
+@js.native
 trait JQueryPromise extends js.Object {
   def always(alwaysCallbacks: js.Any*): JQueryDeferred = js.native
   def done(doneCallbacks: js.Any*): JQueryDeferred = js.native
@@ -67,6 +71,7 @@ trait JQueryPromise extends js.Object {
   def `then`(doneCallbacks: js.Any, failCallbacks: js.Any, progressCallbacks: js.Any = ???): JQueryDeferred = js.native
 }
 
+@js.native
 trait JQueryDeferred extends JQueryPromise {
   def notify(args: js.Any*): JQueryDeferred = js.native
   def notifyWith(context: js.Any, args: js.Any*): JQueryDeferred = js.native
@@ -78,6 +83,7 @@ trait JQueryDeferred extends JQueryPromise {
   def state(): String = js.native
 }
 
+@js.native
 trait JQueryEventObject extends Event {
   var data: js.Any = js.native
   var delegateTarget: Element = js.native
@@ -96,6 +102,7 @@ trait JQueryEventObject extends Event {
   var metaKey: js.Any = js.native
 }
 
+@js.native
 trait JQueryBrowserInfo extends js.Object {
   var safari: Boolean = js.native
   var opera: Boolean = js.native
@@ -104,6 +111,7 @@ trait JQueryBrowserInfo extends js.Object {
   var version: String = js.native
 }
 
+@js.native
 trait JQuerySupport extends js.Object {
   var ajax: Boolean = js.native
   var boxModel: Boolean = js.native
@@ -126,11 +134,13 @@ trait JQuerySupport extends js.Object {
   var tbody: Boolean = js.native
 }
 
+@js.native
 trait JQueryTransport extends js.Object {
   def send(headers: js.Any, completeCallback: js.Function4[Int, String, js.Any, String, Unit]): Unit = js.native
   def abort(): Unit = js.native
 }
 
+@js.native
 trait JQueryStatic extends js.Object {
   def ajax(settings: JQueryAjaxSettings): js.Dynamic = js.native
   def ajax(url: String, settings: JQueryAjaxSettings): js.Dynamic = js.native
@@ -204,6 +214,7 @@ trait JQueryStatic extends js.Object {
   def unique(arr: js.Array[js.Any]): js.Array[js.Any] = js.native
 }
 
+@js.native
 trait JQuery extends js.Object {
   def ajaxComplete(handler: js.Any): JQuery = js.native
   def ajaxError(handler: js.Function3[js.Any, js.Any, js.Any, js.Any]): JQuery = js.native
@@ -529,3 +540,7 @@ trait JQuery extends js.Object {
   def slice(start: Int, end: Int): JQuery = js.native
   def slice(start: Int): JQuery = js.native
 }
+
+@JSName("jQuery")
+@js.native
+object JQueryGlobal extends JQueryStatic
