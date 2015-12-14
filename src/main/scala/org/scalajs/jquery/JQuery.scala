@@ -373,7 +373,9 @@ trait JQuery extends js.Object {
   def off(eventsMap: js.Any): JQuery = js.native
   def on(events: String, selector: js.Any, data: js.Any, handler: js.Function1[JQueryEventObject, js.Any]): JQuery = js.native
   def on(events: String, selector: js.Any, data: js.Any): JQuery = js.native
+  def on(events: String, selector: js.Any, handler: js.Function1[JQueryEventObject, js.Any]): JQuery = js.native
   def on(events: String, selector: js.Any): JQuery = js.native
+  def on(events: String, handler: js.Function1[JQueryEventObject, js.Any]): JQuery = js.native
   def on(events: String): JQuery = js.native
   def on(eventsMap: js.Any, selector: js.Any, data: js.Any): JQuery = js.native
   def on(eventsMap: js.Any, selector: js.Any): JQuery = js.native
