@@ -27,6 +27,7 @@ trait JQueryAjaxSettings extends js.Object {
   var isLocal: Boolean = js.native
   var jsonp: String = js.native
   var jsonpCallback: js.Any = js.native
+  var method: String = js.native
   var mimeType: String = js.native
   var password: String = js.native
   var processData: Boolean = js.native
