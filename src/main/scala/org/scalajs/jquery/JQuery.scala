@@ -83,8 +83,8 @@ trait JQueryEventObject extends Event {
   var data: js.Any = js.native
   var delegateTarget: Element = js.native
   def isDefaultPrevented(): Boolean = js.native
-  def isImmediatePropogationStopped(): Boolean = js.native
-  def isPropogationStopped(): Boolean = js.native
+  def isImmediatePropagationStopped(): Boolean = js.native
+  def isPropagationStopped(): Boolean = js.native
   var namespace: String = js.native
   override def preventDefault(): Unit = js.native // js.Dynamic
   var relatedTarget: Element = js.native
