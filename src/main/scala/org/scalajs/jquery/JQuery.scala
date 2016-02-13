@@ -45,7 +45,7 @@ trait JQueryAjaxSettings extends js.Object {
 }
 
 @js.native
-trait JQueryXHR extends XMLHttpRequest {
+trait JQueryXHR extends XMLHttpRequest with JQueryPromise {
   def overrideMimeType(): js.Dynamic = js.native
 }
 
@@ -188,7 +188,10 @@ trait JQueryStatic extends js.Object {
   var browser: JQueryBrowserInfo = js.native
   var support: JQuerySupport = js.native
   def contains(container: Element, contained: Element): Boolean = js.native
-  def each(collection: js.Any, callback: js.Function2[js.Any, js.Any, js.Any]): js.Dynamic = js.native
+  def each[A](collection: js.Array[A], callback: js.Function2[Int, A, _]): Unit = js.native
+  def each[A](collection: js.Array[A], callback: js.ThisFunction0[A, _]): Unit = js.native
+  def each[A](collection: js.Dictionary[A], callback: js.Function2[String, A, _]): Unit = js.native
+  def each[A](collection: js.Dictionary[A], callback: js.ThisFunction0[A, _]): Unit = js.native
   def extend(target: js.Any, objs: js.Any*): Object = js.native
   def extend(deep: Boolean, target: js.Any, objs: js.Any*): Object = js.native
   def globalEval(code: String): js.Dynamic = js.native
@@ -202,7 +205,10 @@ trait JQueryStatic extends js.Object {
   def isWindow(obj: js.Any): Boolean = js.native
   def isXMLDoc(node: Node): Boolean = js.native
   def makeArray(obj: js.Any): js.Array[js.Any] = js.native
-  def map(array: js.Array[js.Any], callback: js.Function2[js.Any, js.Any, js.Any]): js.Array[js.Any] = js.native
+  def map[A, B](collection: js.Array[A], callback: js.Function2[A, Int, B]): js.Array[B] = js.native
+  def map[A, B](collection: js.Array[A], callback: js.Function1[A, B]): js.Array[B] = js.native
+  def map[A, B](collection: js.Dictionary[A], callback: js.Function2[A, String, B]): js.Dictionary[B] = js.native
+  def map[A, B](collection: js.Dictionary[A], callback: js.Function1[A, B]): js.Dictionary[B] = js.native
   def merge(first: js.Array[js.Any], second: js.Array[js.Any]): js.Array[js.Any] = js.native
   def noop(): js.Dynamic = js.native
   def now(): Double = js.native
@@ -464,7 +470,8 @@ trait JQuery extends js.Object {
   def wrapAll(wrappingElement: js.Any): JQuery = js.native
   def wrapInner(wrappingElement: js.Any): JQuery = js.native
   def wrapInner(func: js.Function1[js.Any, js.Any]): JQuery = js.native
-  def each(func: js.Function2[js.Any, Element, js.Any]): JQuery = js.native
+  def each(func: js.Function2[Int, Element, _]): JQuery = js.native
+  def each(func: js.ThisFunction0[Element, _]): JQuery = js.native
   def get(index: Int): Element = js.native
   def get(): js.Array[Element] = js.native
   def index(selectorOrElement: js.Any): Int = js.native
@@ -491,7 +498,8 @@ trait JQuery extends js.Object {
   def end(): JQuery = js.native
   def eq(index: Int): JQuery = js.native
   def filter(selector: String): JQuery = js.native
-  def filter(func: js.Function1[js.Any, js.Any]): JQuery = js.native
+  def filter(func: js.Function2[Int, Element, Boolean]): JQuery = js.native
+  def filter(func: js.ThisFunction0[Element, Boolean]): JQuery = js.native
   def filter(element: js.Any): JQuery = js.native
   def filter(obj: JQuery): JQuery = js.native
   def find(selector: String): JQuery = js.native
@@ -505,7 +513,8 @@ trait JQuery extends js.Object {
   def is(element: js.Any): Boolean = js.native
   def is(obj: JQuery): Boolean = js.native
   def last(): JQuery = js.native
-  def map(callback: js.Function2[js.Any, Element, js.Any]): JQuery = js.native
+  def map[B](callback: js.Function2[Int, Element, B]): JQuery = js.native
+  def map[B](callback: js.ThisFunction0[Element, B]): JQuery = js.native
   def next(selector: String): JQuery = js.native
   def next(): JQuery = js.native
   def nextAll(selector: String): JQuery = js.native
