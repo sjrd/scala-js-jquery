@@ -5,16 +5,16 @@ name := "Scala.js jQuery"
 
 normalizedName := "scalajs-jquery"
 
-version := "0.8.2-SNAPSHOT"
+version := "0.9.0-SNAPSHOT"
 
 organization := "be.doeraene"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
-crossScalaVersions := Seq("2.10.5", "2.11.6")
+crossScalaVersions := Seq("2.10.6", "2.11.7")
 
 libraryDependencies +=
-  "org.scala-js" %%% "scalajs-dom" % "0.8.2"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.0"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 

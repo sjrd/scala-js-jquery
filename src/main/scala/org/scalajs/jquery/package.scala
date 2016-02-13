@@ -2,6 +2,6 @@ package org.scalajs
 
 import scala.scalajs.js
 
-package object jquery extends js.GlobalScope {
-  val jQuery: JQueryStatic = js.native
+package object jquery {
+  val jQuery: JQueryStatic = js.Dynamic.global.jQuery.asInstanceOf[JQueryStatic]
 }

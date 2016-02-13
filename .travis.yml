@@ -1,8 +1,9 @@
+sudo: false
 language: scala
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package doc
 scala:
-  - 2.10.5
-  - 2.11.6
+  - 2.10.6
+  - 2.11.7
 jdk:
   - oraclejdk7
