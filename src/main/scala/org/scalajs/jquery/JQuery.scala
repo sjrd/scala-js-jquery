@@ -164,14 +164,14 @@ trait JQueryStatic extends js.Object {
   def apply(`object`: JQuery): JQuery = js.native
   def apply(func: js.Function): JQuery = js.native
   def apply(): JQuery = js.native
-  def noConflict(removeAll: Boolean = ???): Object = js.native
+  def noConflict(removeAll: Boolean = ???): js.Object = js.native
   def when(deferreds: js.Any*): JQueryPromise = js.native
   def css(e: js.Any, propertyName: String, value: js.Any): js.Dynamic = js.native
   def css(e: js.Any, propertyName: String): js.Dynamic = js.native
   def css(e: js.Any, propertyName: js.Any, value: js.Any): js.Dynamic = js.native
   def css(e: js.Any, propertyName: js.Any): js.Dynamic = js.native
   var cssHooks: js.Any = js.native
-  def data(element: Element, key: String, value: js.Any): Object = js.native
+  def data(element: Element, key: String, value: js.Any): js.Object = js.native
   def dequeue(element: Element, queueName: String = ???): js.Dynamic = js.native
   def hasData(element: Element): Boolean = js.native
   def queue(element: Element, queueName: String = ???): js.Array[js.Any] = js.native
@@ -192,8 +192,8 @@ trait JQueryStatic extends js.Object {
   def each[A](collection: js.Array[A], callback: js.ThisFunction0[A, _]): Unit = js.native
   def each[A](collection: js.Dictionary[A], callback: js.Function2[String, A, _]): Unit = js.native
   def each[A](collection: js.Dictionary[A], callback: js.ThisFunction0[A, _]): Unit = js.native
-  def extend(target: js.Any, objs: js.Any*): Object = js.native
-  def extend(deep: Boolean, target: js.Any, objs: js.Any*): Object = js.native
+  def extend(target: js.Any, objs: js.Any*): js.Object = js.native
+  def extend(deep: Boolean, target: js.Any, objs: js.Any*): js.Object = js.native
   def globalEval(code: String): js.Dynamic = js.native
   def grep(array: js.Array[js.Any], func: js.Any, invert: Boolean): js.Array[js.Any] = js.native
   def inArray(value: js.Any, array: js.Array[js.Any], fromIndex: Int = ???): Int = js.native
@@ -424,7 +424,7 @@ trait JQuery extends js.Object {
   def submit(handler: js.Function1[JQueryEventObject, js.Any]): JQuery = js.native
   def trigger(eventType: String, extraParameters: js.Any*): JQuery = js.native
   def trigger(event: JQueryEventObject): JQuery = js.native
-  def triggerHandler(eventType: String, extraParameters: js.Any*): Object = js.native
+  def triggerHandler(eventType: String, extraParameters: js.Any*): js.Object = js.native
   def unbind(eventType: String, handler: js.Function1[JQueryEventObject, js.Any]): JQuery = js.native
   def unbind(eventType: String): JQuery = js.native
   def unbind(): JQuery = js.native
