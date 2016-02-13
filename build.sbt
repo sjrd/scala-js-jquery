@@ -18,11 +18,6 @@ libraryDependencies +=
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 
-jsDependencies +=
-  "org.webjars" % "jquery" % "2.1.3" / "2.1.3/jquery.js"
-
-jsDependencies in Test += RuntimeDOM
-
 homepage := Some(url("http://scala-js.org/"))
 
 licenses += ("BSD 3-Clause", url("http://opensource.org/licenses/BSD-3-Clause"))
