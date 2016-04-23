@@ -551,4 +551,7 @@ trait JQuery extends js.Object {
   def siblings(): JQuery = js.native
   def slice(start: Int, end: Int): JQuery = js.native
   def slice(start: Int): JQuery = js.native
+  def load(url: String): JQuery = js.native
+  def load(url: String, data: Any): JQuery = js.native
+  def load(url: String, data: Any, complete: js.Function3[String, String, JQueryXHR, Any]): JQuery = js.native
 }
