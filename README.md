@@ -18,6 +18,15 @@ then enjoy the types available in `org.scalajs.jquery`.
 scalajs-jquery 0.9.0 is built and published for Scala.js 0.6.6 and later, with
 both Scala 2.10 and 2.11.
 
+Include javascript
+------------------
+
+scala-js-jquery provides the types, not the `jquery.js` file itself.
+If you want it to be included in the final `client-jsdeps.js`, you can add the desired version to `jsDependencies`, e.g.,
+
+    jsDependencies +=
+      "org.webjars" % "jquery" % "2.1.3" / "2.1.3/jquery.js"
+
 License
 -------
 
