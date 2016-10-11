@@ -3,6 +3,7 @@ package org.scalajs.jquery
 import scala.scalajs.js
 import org.scalajs.dom
 import org.scalajs.dom._
+import js.|
 
 import js.annotation.JSName
 
@@ -101,6 +102,7 @@ trait JQueryEventObject extends Event {
   var pageY: Int = js.native
   var which: Int = js.native
   var metaKey: js.Any = js.native
+  var keyCode: js.UndefOr[Int] = js.native
 }
 
 @js.native
@@ -283,7 +285,7 @@ trait JQuery extends js.Object {
   def scrollTop(): Int = js.native
   def scrollTop(value: Int): JQuery = js.native
   def width(): Double = js.native
-  def width(value: Double): JQuery = js.native
+  def width(value: Double | String): JQuery = js.native
   def width(func: js.Function2[js.Any, js.Any, js.Any]): JQuery = js.native
   def clearQueue(queueName: String): JQuery = js.native
   def clearQueue(): JQuery = js.native
