@@ -9,12 +9,12 @@ version := "0.9.1-SNAPSHOT"
 
 organization := "be.doeraene"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
-crossScalaVersions := Seq("2.10.6", "2.11.7")
+crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.0-RC2")
 
 libraryDependencies +=
-  "org.scala-js" %%% "scalajs-dom" % "0.9.0"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.1"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 
