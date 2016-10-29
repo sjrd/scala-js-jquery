@@ -11,7 +11,7 @@ organization := "be.doeraene"
 
 scalaVersion := "2.11.8"
 
-crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.0-RC2")
+crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.0")
 
 libraryDependencies +=
   "org.scala-js" %%% "scalajs-dom" % "0.9.1"
