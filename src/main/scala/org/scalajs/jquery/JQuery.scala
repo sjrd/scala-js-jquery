@@ -242,6 +242,10 @@ trait JQuery extends js.Object {
   def hasClass(className: String): Boolean = js.native
   def html(htmlString: String): JQuery = js.native
   def html(): String = js.native
+  def load(url: String, data: String | js.Object, complete: js.Function3[String, String, JQueryXHR, Any]): JQuery = js.native
+  def load(url: String, data: String | js.Object): JQuery = js.native
+  def load(url: String, complete: js.Function3[String, String, JQueryXHR, Any]): JQuery = js.native
+  def load(url: String): JQuery = js.native
   def prop(propertyName: String): js.Dynamic = js.native
   def prop(propertyName: String, value: js.Any): JQuery = js.native
   def prop(map: js.Any): JQuery = js.native
