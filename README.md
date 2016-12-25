@@ -46,8 +46,6 @@ Next define a `jquery` object in your Scala code using the `@JSImport` annotatio
 A simple example on how to use the Scala.js JQuery facade this way is shown here:
 
 ```
-package app
-
 import org.scalajs.jquery.JQueryStatic
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -57,8 +55,7 @@ import scala.scalajs.js.annotation.JSImport
 object jquery extends JQueryStatic
 
 object Main extends js.JSApp {
-
-  @scala.scalajs.js.annotation.JSExport
+  @js.annotation.JSExport
   override def main(): Unit = {
     jquery("body").html("Hello world!")
   }
