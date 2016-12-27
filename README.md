@@ -27,6 +27,43 @@ If you want it to be included in the final `client-jsdeps.js`, you can add the d
     jsDependencies +=
       "org.webjars" % "jquery" % "2.1.3" / "2.1.3/jquery.js"
 
+Using [Scala.js Bundler](https://scalacenter.github.io/scalajs-bundler)
+-----------------------------------------------------------------------
+
+If you want to use Scala.js Bundler (sbt plugin must be enabled in `project/plugins.sbt`) to import jQuery as npm module, then add the following lines to your sbt build definition:
+
+```
+enablePlugins(ScalaJSBundlerPlugin)
+
+libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.1"
+
+npmDependencies in Compile ++= Seq(
+  "jquery" -> "2.1.3"
+)
+```
+
+Next define a `jquery` object in your Scala code using the `@JSImport` annotation to get access to the exported `jQuery` object.
+A simple example on how to use the Scala.js JQuery facade this way is shown here:
+
+```
+import org.scalajs.jquery.JQueryStatic
+import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
+
+@js.native
+@JSImport("jquery", JSImport.Namespace)
+object jquery extends JQueryStatic
+
+object Main extends js.JSApp {
+  @js.annotation.JSExport
+  override def main(): Unit = {
+    jquery("body").html("Hello world!")
+  }
+}
+```
+
+Running the sbt task `fastOptJS::webpack` will generate a JavaScript bundle (`...-fastopt-bundle.js`) including jquery as specified in the `npmDependencies` sbt build definition setting.
+
 License
 -------
 
