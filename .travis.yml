@@ -4,10 +4,11 @@ script:
   - sbt ++$TRAVIS_SCALA_VERSION package doc
 scala:
   - 2.10.6
-  - 2.11.8
+  - 2.11.11
+  - 2.12.2
+  - 2.13.0-M1
 jdk:
-  - oraclejdk7
-matrix:
-  include:
-    - scala: 2.12.0
-      jdk: oraclejdk8
+  - oraclejdk8
+env:
+  - SCALAJS_VERSION=0.6.18
+  - SCALAJS_VERSION=1.0.0-M1
