@@ -2,7 +2,7 @@ scala-js-jquery
 ===============
 
 [![Build Status](https://travis-ci.org/scala-js/scala-js-jquery.svg?branch=master)](https://travis-ci.org/scala-js/scala-js-jquery)
-[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.13.svg)](https://www.scala-js.org/)
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.17.svg)](https://www.scala-js.org/)
 
 Static types for the jQuery API for [Scala.js](http://www.scala-js.org/) programs.
 
@@ -11,12 +11,12 @@ Usage
 
 Add the following to your sbt build definition:
 
-    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.1"
+    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.2"
 
 then enjoy the types available in `org.scalajs.jquery`.
 
-scalajs-jquery 0.9.1 is built and published for Scala.js 0.6.13 and later, with
-Scala 2.10, 2.11 and 2.12.
+scalajs-jquery 0.9.2 is built and published for Scala.js 0.6.17 and later and
+Scala.js 1.0.0-M1, with Scala 2.10, 2.11, 2.12 and 2.13.0-M1.
 
 Include JavaScript
 ------------------
@@ -35,7 +35,7 @@ If you want to use Scala.js Bundler (sbt plugin must be enabled in `project/plug
 ```
 enablePlugins(ScalaJSBundlerPlugin)
 
-libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.1"
+libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.2"
 
 npmDependencies in Compile ++= Seq(
   "jquery" -> "2.1.3"
@@ -67,7 +67,7 @@ Running the sbt task `fastOptJS::webpack` will generate a JavaScript bundle (`..
 License
 -------
 
-Copyright (c) 2002-2015 EPFL
+Copyright (c) 2002-2017 EPFL
 
 All rights reserved.
 

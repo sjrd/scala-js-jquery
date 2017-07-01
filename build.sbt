@@ -8,7 +8,7 @@ name := "Scala.js jQuery"
 
 normalizedName := "scalajs-jquery"
 
-version := "0.9.2-SNAPSHOT"
+version := "0.9.2"
 
 organization := "be.doeraene"
 
