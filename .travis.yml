@@ -16,3 +16,12 @@ matrix:
   exclude:
     - scala: 2.10.7
       env: SCALAJS_VERSION=1.0.0-M3
+
+cache:
+  directories:
+    - "$HOME/.ivy2/cache"
+    - "$HOME/.sbt"
+before_cache:
+  # Cleanup the cached directories to avoid unnecessary cache updates
+  - find $HOME/.ivy2/cache -name "ivydata-*.properties" -print -delete
+  - find $HOME/.sbt -name "*.lock" -print -delete
