@@ -1,7 +1,10 @@
 lazy val root = project.in(file(".")).
   enablePlugins(ScalaJSPlugin)
 
-crossScalaVersions in ThisBuild := Seq("2.11.11", "2.10.6", "2.12.2", "2.13.0-M1")
+crossScalaVersions in ThisBuild := {
+  if (scalaJSVersion.startsWith("1.")) Seq("2.12.4", "2.11.12", "2.13.0-M3")
+  else Seq("2.12.4", "2.11.12", "2.10.7", "2.13.0-M3")
+}
 scalaVersion in ThisBuild := (crossScalaVersions in ThisBuild).value.head
 
 name := "Scala.js jQuery"
@@ -13,7 +16,7 @@ version := "0.9.3-SNAPSHOT"
 organization := "be.doeraene"
 
 libraryDependencies +=
-  "org.scala-js" %%% "scalajs-dom" % "0.9.3"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.5"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 
