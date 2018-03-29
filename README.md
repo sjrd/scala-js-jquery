@@ -7,6 +7,9 @@ scala-js-jquery
 
 Static types for the jQuery API for [Scala.js](http://www.scala-js.org/) programs.
 
+**This library is not maintained anymore.**
+Consider using [jquery-facade](https://github.com/jducoeur/jquery-facade) instead.
+
 Usage
 -----
 
