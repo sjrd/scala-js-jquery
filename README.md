@@ -4,6 +4,7 @@ scala-js-jquery
 [![Build Status](https://travis-ci.org/sjrd/scala-js-jquery.svg?branch=master)](https://travis-ci.org/sjrd/scala-js-jquery)
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.17.svg)](https://www.scala-js.org/)
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0-M3.svg)](https://www.scala-js.org/)
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0-M5.svg)](https://www.scala-js.org/)
 
 Static types for the jQuery API for [Scala.js](http://www.scala-js.org/) programs.
 
@@ -15,12 +16,13 @@ Usage
 
 Add the following to your sbt build definition:
 
-    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.3"
+    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.4"
 
 then enjoy the types available in `org.scalajs.jquery`.
 
-scalajs-jquery 0.9.3 is built and published for Scala.js 0.6.17 and later and
-Scala.js 1.0.0-M3, with Scala 2.10, 2.11, 2.12 and 2.13.0-M3.
+scalajs-jquery 0.9.3 is built and published for Scala.js 0.6.17 and later,
+Scala.js 1.0.0-M3 and Scala.js 1.0.0-M5, with Scala 2.10, 2.11, 2.12, 2.13.0-M3
+and 2.13.0-M4.
 
 Include JavaScript
 ------------------
@@ -39,7 +41,7 @@ If you want to use Scala.js Bundler (sbt plugin must be enabled in `project/plug
 ```
 enablePlugins(ScalaJSBundlerPlugin)
 
-libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.3"
+libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.4"
 
 npmDependencies in Compile ++= Seq(
   "jquery" -> "2.1.3"
