@@ -284,10 +284,10 @@ trait JQuery extends js.Object {
   def outerHeight(includeMargin: Boolean = ???): Double = js.native
   def outerWidth(includeMargin: Boolean = ???): Double = js.native
   def position(): js.Any = js.native
-  def scrollLeft(): Int = js.native
-  def scrollLeft(value: Int): JQuery = js.native
-  def scrollTop(): Int = js.native
-  def scrollTop(value: Int): JQuery = js.native
+  def scrollLeft(): Double = js.native
+  def scrollLeft(value: Double): JQuery = js.native
+  def scrollTop(): Double = js.native
+  def scrollTop(value: Double): JQuery = js.native
   def width(): Double = js.native
   def width(value: Double | String): JQuery = js.native
   def width(func: js.Function2[js.Any, js.Any, js.Any]): JQuery = js.native
