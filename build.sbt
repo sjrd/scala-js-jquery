@@ -2,7 +2,7 @@ lazy val root = project.in(file(".")).
   enablePlugins(ScalaJSPlugin)
 
 crossScalaVersions in ThisBuild := {
-  val allVersions = Seq("2.12.8", "2.11.12", "2.10.7", "2.13.0-RC1")
+  val allVersions = Seq("2.12.8", "2.11.12", "2.10.7", "2.13.0-RC2")
   if (scalaJSVersion.startsWith("0.6."))
     allVersions
   else
