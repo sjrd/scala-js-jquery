@@ -478,7 +478,7 @@ trait JQuery extends js.Object {
   def wrapInner(func: js.Function1[js.Any, js.Any]): JQuery = js.native
   def each(func: js.Function2[Int, Element, _]): JQuery = js.native
   def each(func: js.ThisFunction0[Element, _]): JQuery = js.native
-  def get(index: Int): Element = js.native
+  def get(index: Int): js.UndefOr[Element] = js.native
   def get(): js.Array[Element] = js.native
   def index(selectorOrElement: js.Any): Int = js.native
   def index(): Int = js.native
