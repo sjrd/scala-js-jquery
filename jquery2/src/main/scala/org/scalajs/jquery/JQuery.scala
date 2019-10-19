@@ -69,6 +69,7 @@ trait JQueryPromise extends js.Object {
   def always(alwaysCallbacks: js.Any*): JQueryDeferred = js.native
   def done(doneCallbacks: js.Any*): JQueryDeferred = js.native
   def fail(failCallbacks: js.Any*): JQueryDeferred = js.native
+  @deprecated("Use then and fail", "jQuery 1.8")
   def pipe(doneFilter: js.Function1[js.Any, js.Any] = ???, failFilter: js.Function1[js.Any, js.Any] = ???, progressFilter: js.Function1[js.Any, js.Any] = ???): JQueryPromise = js.native
   def `then`(doneCallbacks: js.Any, failCallbacks: js.Any, progressCallbacks: js.Any = ???): JQueryDeferred = js.native
 }
@@ -187,6 +188,7 @@ trait JQueryStatic extends js.Object {
   var expr: js.Any = js.native
   var fn: js.Any = js.native
   var isReady: Boolean = js.native
+  @deprecated("Use jQuery migrate plugin. Removed in jQuery 1.9", "jQuery 1.3")
   var browser: JQueryBrowserInfo = js.native
   var support: JQuerySupport = js.native
   def contains(container: Element, contained: Element): Boolean = js.native
@@ -441,6 +443,7 @@ trait JQuery extends js.Object {
   def undelegate(selector: js.Any, eventType: String): JQuery = js.native
   def undelegate(selector: js.Any, events: js.Any): JQuery = js.native
   def undelegate(namespace: String): JQuery = js.native
+  @deprecated("This was removed in jQuery 3.0", "jQuery 1.10")
   var context: Element = js.native
   var jquery: String = js.native
   def pushStack(elements: js.Array[js.Any]): JQuery = js.native
