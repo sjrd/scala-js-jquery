@@ -33,14 +33,15 @@ trait JQueryStatic extends js.Object {
   var valHooks: JQuery.ValHooks = js.native
 
   def apply(window: Window, discriminator: Boolean): JQueryStatic = js.native
-  def apply[TElement <: HTMLElement](html: JQuery.htmlString, attributes: JQuery.PlainObject[_]): JQuery[TElement] = js.native
-  def apply[TElement <: HTMLElement](html: JQuery.htmlString, ownerDocument: Document): JQuery[TElement] = js.native
-  def apply[TElement <: Element](selector: JQuery.Selector, context: Element | Document | JQuery[Element]): JQuery[TElement] = js.native
-  def apply[TElement <: Element](selector: JQuery.Selector): JQuery[TElement] = js.native
-  def apply[TElement <: Element](elements: TElement | ArrayLike[TElement]): JQuery[TElement] = js.native
-  def apply[TElement <: Element](selection: JQuery[TElement]): JQuery[TElement] = js.native
+  def apply(window: Window): JQuery[Element] = js.native
+  def apply(html: JQuery.htmlString, attributes: JQuery.PlainObject[_]): JQuery[Element] = js.native
+  def apply(html: JQuery.htmlString, ownerDocument: Document): JQuery[Element] = js.native
+  def apply(selector: JQuery.Selector, context: Element | Document | JQuery[Element]): JQuery[Element] = js.native
+  def apply(selector: JQuery.Selector): JQuery[Element] = js.native
+  def apply(elements: Element | ArrayLike[Element]): JQuery[Element] = js.native
+  def apply(selection: JQuery[Element]): JQuery[Element] = js.native
   def apply[T <: js.Any](array: js.Array[T]): JQuery[T] = js.native
-  def apply[T <: js.Object](`object`: T): JQuery[T] = js.native
+  def apply(obj: js.Any): JQuery[Element] = js.native
   def apply(element: HTMLSelectElement): JQuery[HTMLSelectElement] = js.native
   def apply(callback: js.ThisFunction1[Document, JQueryStatic, Unit]): JQuery[Document] = js.native
   def apply(): JQuery[Element] = js.native
