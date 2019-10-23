@@ -230,7 +230,7 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
 
   def height(value: String | Double): this.type = js.native
   def height(function: js.ThisFunction2[TElement, Int, Double, String | Double]): this.type = js.native
-  def height(): js.UndefOr[Double] = js.native
+  def height(): Double = js.native
 
   def hide(duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
   def hide(duration: JQuery.Duration, easing: String): this.type = js.native
@@ -258,11 +258,11 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
 
   def innerHeight(value: String | Double): this.type = js.native
   def innerHeight(function: js.ThisFunction2[TElement, Int, Double, String | Double]): this.type = js.native
-  def innerHeight(): js.UndefOr[Double] = js.native
+  def innerHeight(): Double = js.native
 
   def innerWidth(value: String | Double): this.type = js.native
   def innerWidth(function: js.ThisFunction2[TElement, Int, Double, String | Double]): this.type = js.native
-  def innerWidth(): js.UndefOr[Double] = js.native
+  def innerWidth(): Double = js.native
 
   def insertAfter(target: InsertTarget): this.type = js.native
 
@@ -497,10 +497,10 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def scroll(): this.type = js.native
 
   def scrollLeft(value: Double): this.type = js.native
-  def scrollLeft(): js.UndefOr[Double] = js.native
+  def scrollLeft(): Double = js.native
 
   def scrollTop(value: Double): this.type = js.native
-  def scrollTop(): js.UndefOr[Double] = js.native
+  def scrollTop(): Double = js.native
 
   def select(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
   def select(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
@@ -635,7 +635,7 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
 
   def width(function: js.ThisFunction2[TElement, Int, Double, String | Double]): this.type = js.native
   def width(value: String | Double): this.type = js.native
-  def width(): js.UndefOr[Double] = js.native
+  def width(): Double = js.native
 
   def wrap(wrappingElement: JQuery.Selector | JQuery.htmlString | Element | JQuery[Element]): this.type = js.native
   def wrap(function: js.ThisFunction1[TElement, Int, String | JQuery[Element]]): this.type = js.native
