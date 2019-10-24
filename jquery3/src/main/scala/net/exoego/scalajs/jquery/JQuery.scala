@@ -1,8 +1,8 @@
 package net.exoego.scalajs.jquery
 
 import net.exoego.scalajs.jquery.JQuery.Ajax.{ CompleteCallback, ErrorCallback, StatusCodeCallbacks, SuccessCallback }
-import org.scalajs.dom.raw.HTMLElement
-import org.scalajs.dom._
+import org.scalajs.dom.{ Comment, DocumentFragment, ErrorEvent, EventTarget, Node, ProgressEvent, Text, TouchList, Window, XMLHttpRequest, XMLHttpRequestEventTarget }
+import org.scalajs.dom.html._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ JSBracketAccess, JSGlobal, JSName }
@@ -102,7 +102,7 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def closest(selection: JQuery[Element]): this.type = js.native
   def closest(element: Element): this.type = js.native
 
-  def contents(): JQuery[HTMLElement | Text | Comment | Document] = js.native
+  def contents(): JQuery[Element | Text | Comment | Document] = js.native
 
   def contextmenu(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
 
@@ -795,13 +795,13 @@ object JQuery {
   }
 
   trait CSSHook extends js.Object {
-    var get: js.UndefOr[js.Function3[HTMLElement, js.Any, js.Any, Unit]] = js.undefined
-    var set: js.UndefOr[js.Function3[HTMLElement, js.Any, js.Any, Unit]] = js.undefined
+    var get: js.UndefOr[js.Function3[Element, js.Any, js.Any, Unit]] = js.undefined
+    var set: js.UndefOr[js.Function3[Element, js.Any, js.Any, Unit]] = js.undefined
   }
 
   trait ValHook extends js.Object {
-    var get: js.UndefOr[js.Function1[HTMLElement, js.Any]] = js.undefined
-    var set: js.UndefOr[js.Function2[HTMLElement, js.Any, Unit]] = js.undefined
+    var get: js.UndefOr[js.Function1[Element, js.Any]] = js.undefined
+    var set: js.UndefOr[js.Function2[Element, js.Any, Unit]] = js.undefined
   }
 
   @js.native
