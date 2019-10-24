@@ -1,39 +1,97 @@
 scala-js-jquery
 ===============
 
-[![Build Status](https://travis-ci.org/sjrd/scala-js-jquery.svg?branch=master)](https://travis-ci.org/sjrd/scala-js-jquery)
-[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.17.svg)](https://www.scala-js.org/)
-[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0-M7.svg)](https://www.scala-js.org/)
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.29.svg)](https://www.scala-js.org/)
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0-M8.svg)](https://www.scala-js.org/)
 
 Static types for the jQuery API for [Scala.js](http://www.scala-js.org/) programs.
 
-**This library is not maintained anymore.**
-Consider using [jquery-facade](https://github.com/jducoeur/jquery-facade) instead.
+**This library is a fork of [sjrd/scala-js-jquery](https://github.com/sjrd/scala-js-jquery) to maintain for newer Scala.js and jQuery**.
 
 Usage
 -----
 
+## For jQuery 3 (recommended)
+
 Add the following to your sbt build definition:
 
-    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.5"
+```scala
+libraryDependencies += "net.exoego" %%% "scalajs-jquery3" % "0.9.6"
+```
 
+Enjoy types in Scala file:
+
+```scala
+import net.exoego.scalajs.jquery._
+
+jQuery("button".on("click", () => println("hello world"))
+```
+    
+This aritifcat is built and published for 
+
+* Scala.js 0.6.29 and later, and Scala.js 1.0.0-M8
+* with Scala 2.11, 2.12, 2.13
+* for [jQuery 3.4.1 based on this TypeScript definition and manually tweaked](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/b0503ac10547e9e087febf36e83c600a62c444bb/types/jquery)
+
+It will likely be published as is for later versions of Scala and Scala.js as
+well.
+
+
+## For jQuery 3 in org.scalajs.jquery package
+
+This artifact provides type aliases as bridge from the original package
+`org.scalajs.jquery` to the updated `net.exoego.scalajs.jquery` package.
+
+It  will allow you to update type facade to jQuery 3 with minimum code change.
+But you should expect some minor rewrites, since 
+
+* Original `org.scalajs.jquery` offers non strict types for jQuery 1/2.
+* `net.exoego.scalajs.jquery` offers stricter types are for jQuery 3.
+
+Add the following to your sbt build definition:
+
+```scala
+libraryDependencies += "net.exoego" %%% "scalajs-jquery3-compat" % "0.9.6"
+```
+
+You may use type aliases in `org.scalajs.jquery`:
+
+```scala
+import org.scalajs.jquery._
+
+jQuery("button".on("click", () => println("hello world"))
+```
+    
+## For jQuery 1/2
+
+This is a drop-in replacement for original `"be.doeraene" %%% "scalajs-jquery" % "0.9.5"` artifact.
+
+**Caution: Sources of `scalajs-jquery2` are just copy of [sjrd/scala-js-jquery](https://github.com/sjrd/scala-js-jquery) and published for newer Scala.js & Scala. [The actual supported jQuery version is unknown](https://github.com/sjrd/scala-js-jquery/issues/1#issuecomment-33003326). It is unlikely to update type facade for this artifact by me (contribution are welcome).**
+
+Add the following to your sbt build definition:
+
+```scala
+libraryDependencies += "net.exoego" %%% "scalajs-jquery2" % "0.9.6"
+```
+
+Enjoy types in Scala file:
+
+```scala
+import org.scalajs.jquery._
+
+jQuery("button".on("click", () => println("hello world"))
+```
+    
 then enjoy the types available in `org.scalajs.jquery`.
 
-scalajs-jquery 0.9.5 is built and published for Scala.js 0.6.17 and later,
-and Scala.js 1.0.0-M7, with Scala 2.10, 2.11, 2.12, 2.13.0-RC2. It will
+**Caution: Sources of `scalajs-jquery2` are just copy of [sjrd/scala-js-jquery](https://github.com/sjrd/scala-js-jquery) and published for newer Scala.js & Scala. [The actual supported jQuery version is unknown](https://github.com/sjrd/scala-js-jquery/issues/1#issuecomment-33003326). It is unlikely to fix/add type facade for this artifact by me (contribution are welcome).**
+
+This aritifcat is built and published for Scala.js 0.6.29 and later,
+and Scala.js 1.0.0-M8, with Scala 2.11, 2.12, 2.13. It will
 likely be published as is for later versions of Scala and Scala.js as
 well.
 
-Include JavaScript
-------------------
 
-**Deprecated:** use Scala.js Bundler instead (see below)
-
-scala-js-jquery provides the types, not the `jquery.js` file itself.
-If you want it to be included in the final `client-jsdeps.js`, you can add the desired version to `jsDependencies`, e.g.,
-
-    jsDependencies +=
-      "org.webjars" % "jquery" % "2.1.3" / "2.1.3/jquery.js"
 
 Using [Scala.js Bundler](https://scalacenter.github.io/scalajs-bundler)
 -----------------------------------------------------------------------
@@ -43,10 +101,10 @@ If you want to use Scala.js Bundler (sbt plugin must be enabled in `project/plug
 ```
 enablePlugins(ScalaJSBundlerPlugin)
 
-libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.5"
+libraryDependencies += "net.exoego" %%% "scalajs-jquery3" % "0.9.6"
 
 npmDependencies in Compile ++= Seq(
-  "jquery" -> "2.1.3"
+  "jquery" -> "3.4.1"
 )
 ```
 
@@ -54,7 +112,7 @@ Then define a `jquery` object in your Scala code using the `@JSImport` annotatio
 A simple example on how to use the Scala.js JQuery facade this way is shown here:
 
 ```
-import org.scalajs.jquery.JQueryStatic
+import net.exoego.scalajs.jquery.JQueryStatic
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
@@ -62,8 +120,7 @@ import scala.scalajs.js.annotation.JSImport
 @JSImport("jquery", JSImport.Namespace)
 object jquery extends JQueryStatic
 
-object Main extends js.JSApp {
-  @js.annotation.JSExport
+object Main {
   override def main(): Unit = {
     jquery("body").html("Hello world!")
   }
@@ -71,34 +128,3 @@ object Main extends js.JSApp {
 ```
 
 Running the sbt task `fastOptJS::webpack` will generate a JavaScript bundle (`...-fastopt-bundle.js`) including jquery as specified in the `npmDependencies` sbt build definition setting.
-
-License
--------
-
-Copyright (c) 2002-2019 EPFL
-
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification,
-are permitted provided that the following conditions are met:
-
-*   Redistributions of source code must retain the above copyright notice,
-    this list of conditions and the following disclaimer.
-*   Redistributions in binary form must reproduce the above copyright notice,
-    this list of conditions and the following disclaimer in the documentation
-    and/or other materials provided with the distribution.
-*   Neither the name of the EPFL nor the names of its contributors
-    may be used to endorse or promote products derived from this software
-    without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
-CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
