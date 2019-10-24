@@ -3,7 +3,7 @@ import sbt.Keys._
 import sbt._
 import sbtrelease.ReleasePlugin.autoImport._
 import sbtrelease.ReleaseStateTransformations._
-import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport.scalaJSVersion
+import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
 import xerial.sbt.Sonatype.SonatypeKeys
 
