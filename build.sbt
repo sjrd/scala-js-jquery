@@ -6,6 +6,7 @@ lazy val root = project.in(file("."))
   .settings(MySettings.commonSettings)
   .settings(MySettings.publishingSettings)
   .settings(MySettings.nonPublishingSetting)
+  .settings(libraryDependencies := Seq.empty)
 
 lazy val jquery2 = project.in(file("jquery2"))
   .enablePlugins(ScalaJSPlugin)
