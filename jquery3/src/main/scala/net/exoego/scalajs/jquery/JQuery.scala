@@ -514,7 +514,7 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def off(events: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
   def off(events: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def off(events: String, handler: Boolean): this.type = js.native
-  def off(events: String, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def off(events: String): this.type = js.native
   def off(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
   def off(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
   def off(event: JQuery.TriggeredEvent[TElement, js.Any, EventTarget, EventTarget]): this.type = js.native
