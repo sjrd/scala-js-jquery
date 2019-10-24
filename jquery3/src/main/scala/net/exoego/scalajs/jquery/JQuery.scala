@@ -28,17 +28,43 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def after(contents: ContentLike*): this.type = js.native
   def after(function: js.ThisFunction2[TElement, Int, String, ContentLike]): this.type = js.native
 
-  def ajaxComplete(handler: js.ThisFunction3[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, Unit] | Boolean): this.type = js.native
+  def ajaxComplete(handler: js.ThisFunction3[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, Any]): this.type = js.native
+  def ajaxComplete(handler: js.ThisFunction2[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, Any]): this.type = js.native
+  def ajaxComplete(handler: js.ThisFunction1[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], Any]): this.type = js.native
+  def ajaxComplete(handler: js.ThisFunction0[Document, Any]): this.type = js.native
+  def ajaxComplete(handler: js.Function0[Any]): this.type = js.native
+  def ajaxComplete(handler: Boolean): this.type = js.native
 
-  def ajaxError(handler: js.ThisFunction4[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, String, Unit] | Boolean): this.type = js.native
+  def ajaxError(handler: js.ThisFunction4[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, String, Any]): this.type = js.native
+  def ajaxError(handler: js.ThisFunction3[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, Any]): this.type = js.native
+  def ajaxError(handler: js.ThisFunction2[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, Any]): this.type = js.native
+  def ajaxError(handler: js.ThisFunction1[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], Any]): this.type = js.native
+  def ajaxError(handler: js.ThisFunction0[Document, Any]): this.type = js.native
+  def ajaxError(handler: js.Function0[Any]): this.type = js.native
+  def ajaxError(handler: Boolean): this.type = js.native
 
-  def ajaxSend(handler: js.ThisFunction3[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, Unit] | Boolean): this.type = js.native
+  def ajaxSend(handler: js.ThisFunction3[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, Any]): this.type = js.native
+  def ajaxSend(handler: js.ThisFunction2[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, Any]): this.type = js.native
+  def ajaxSend(handler: js.ThisFunction1[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], Any]): this.type = js.native
+  def ajaxSend(handler: js.ThisFunction0[Document, Any]): this.type = js.native
+  def ajaxSend(handler: js.Function0[Any]): this.type = js.native
+  def ajaxSend(handler: Boolean): this.type = js.native
 
-  def ajaxStart(handler: js.ThisFunction0[Document, Unit] | Boolean): this.type = js.native
+  def ajaxStart(handler: js.ThisFunction0[Document, Unit]): this.type = js.native
+  def ajaxStart(handler: js.Function0[Unit]): this.type = js.native
+  def ajaxStart(handler: Boolean): this.type = js.native
 
-  def ajaxStop(handler: js.ThisFunction0[Document, Unit] | Boolean): this.type = js.native
+  def ajaxStop(handler: js.ThisFunction0[Document, Unit]): this.type = js.native
+  def ajaxStop(handler: js.Function0[Unit]): this.type = js.native
+  def ajaxStop(handler: Boolean): this.type = js.native
 
-  def ajaxSuccess(handler: js.ThisFunction4[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, JQuery.PlainObject[js.Any], Unit] | Boolean): this.type = js.native
+  def ajaxSuccess(handler: js.ThisFunction4[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, JQuery.PlainObject[js.Any], Any]): this.type = js.native
+  def ajaxSuccess(handler: js.ThisFunction3[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, JQuery.AjaxSettings, Any]): this.type = js.native
+  def ajaxSuccess(handler: js.ThisFunction2[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], JQuery.jqXHR, Any]): this.type = js.native
+  def ajaxSuccess(handler: js.ThisFunction1[Document, JQuery.TriggeredEvent[Document, Unit, Document, Document], Any]): this.type = js.native
+  def ajaxSuccess(handler: js.ThisFunction0[Document, Any]): this.type = js.native
+  def ajaxSuccess(handler: js.Function0[Any]): this.type = js.native
+  def ajaxSuccess(handler: Boolean): this.type = js.native
 
   def animate(properties: JQuery.PlainObject[_], duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
   def animate(properties: JQuery.PlainObject[_], duration: JQuery.Duration, easing: String): this.type = js.native
@@ -64,21 +90,39 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def before(function: js.ThisFunction2[TElement, Int, String, ContentLike]): this.type = js.native
 
   @deprecated("Use on", "jQuery 3.0")
-  def bind(eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def bind(eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
   @deprecated("Use on", "jQuery 3.0")
-  def bind(eventType: String, handler: js.UndefOr[JQuery.TypeEventHandler[TElement] | Null]): this.type = js.native
+  def bind(eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def bind(eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def bind(eventType: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def bind(eventType: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def bind(eventType: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def bind(eventType: String, handler: js.UndefOr[Null]): this.type = js.native
   @deprecated("Use on", "jQuery 3.0")
   def bind(eventType: String, preventBubble: Boolean): this.type = js.native
   @deprecated("Use on", "jQuery 3.0")
   def bind(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
 
-  def blur(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def blur(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def blur(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def blur(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def blur(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def blur(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def blur(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def blur(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def blur(handler: Boolean): this.type = js.native
   def blur(): this.type = js.native
 
-  def change(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def change(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def change(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def change(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def change(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def change(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def change(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def change(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def change(handler: Boolean): this.type = js.native
   def change(): this.type = js.native
 
@@ -88,8 +132,12 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def clearQueue(queueName: String): this.type = js.native
   def clearQueue(): this.type = js.native
 
-  def click(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def click(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def click(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def click(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def click(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def click(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def click(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def click(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def click(handler: Boolean): this.type = js.native
   def click(): this.type = js.native
 
@@ -104,9 +152,12 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
 
   def contents(): JQuery[Element | Text | Comment | Document] = js.native
 
-  def contextmenu(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-
-  def contextmenu(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def contextmenu(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def contextmenu(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def contextmenu(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def contextmenu(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def contextmenu(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def contextmenu(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
 
   def contextmenu(handler: Boolean): this.type = js.native
 
@@ -123,8 +174,12 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def data(key: String): js.Dynamic = js.native
   def data(): JQuery.PlainObject[js.Any] = js.native
 
-  def dblclick(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def dblclick(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def dblclick(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def dblclick(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def dblclick(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def dblclick(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def dblclick(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def dblclick(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def dblclick(handler: Boolean): this.type = js.native
   def dblclick(): this.type = js.native
 
@@ -132,9 +187,19 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def delay(duration: JQuery.Duration): this.type = js.native
 
   @deprecated("Use on", "jQuery 3.0")
-  def delegate(selector: JQuery.Selector, eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def delegate(selector: JQuery.Selector, eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
   @deprecated("Use on", "jQuery 3.0")
-  def delegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler[TElement] | Boolean): this.type = js.native
+  def delegate(selector: JQuery.Selector, eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def delegate(selector: JQuery.Selector, eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def delegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def delegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def delegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  @deprecated("Use on", "jQuery 3.0")
+  def delegate(selector: JQuery.Selector, eventType: String, handler: Boolean): this.type = js.native
   @deprecated("Use on", "jQuery 3.0")
   def delegate(selector: JQuery.Selector, events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
 
@@ -155,38 +220,52 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
 
   def extend(obj: js.Object): this.type = js.native
 
-  def fadeIn(duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeIn(duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeIn(duration: JQuery.Duration, easing: String, complete: js.Function0[Any]): this.type = js.native
   def fadeIn(duration: JQuery.Duration, easing: String): this.type = js.native
-  def fadeIn(duration: JQuery.Duration, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
-  def fadeIn(easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeIn(duration: JQuery.Duration, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeIn(duration: JQuery.Duration, complete: js.Function0[Any]): this.type = js.native
+  def fadeIn(easing: String, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeIn(easing: String, complete: js.Function0[Any]): this.type = js.native
   def fadeIn(duration: JQuery.Duration): this.type = js.native
   def fadeIn(easing: String): this.type = js.native
-  def fadeIn(complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeIn(complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeIn(complete: js.Function0[Any]): this.type = js.native
   def fadeIn(options: JQuery.EffectsOptions[TElement]): this.type = js.native
   def fadeIn(): this.type = js.native
 
-  def fadeOut(duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeOut(duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeOut(duration: JQuery.Duration, easing: String, complete: js.Function0[Any]): this.type = js.native
   def fadeOut(duration: JQuery.Duration, easing: String): this.type = js.native
-  def fadeOut(duration: JQuery.Duration, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
-  def fadeOut(easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeOut(duration: JQuery.Duration, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeOut(duration: JQuery.Duration, complete: js.Function0[Any]): this.type = js.native
+  def fadeOut(easing: String, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeOut(easing: String, complete: js.Function0[Any]): this.type = js.native
   def fadeOut(duration: JQuery.Duration): this.type = js.native
   def fadeOut(easing: String): this.type = js.native
-  def fadeOut(complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeOut(complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeOut(complete: js.Function0[Any]): this.type = js.native
   def fadeOut(options: JQuery.EffectsOptions[TElement]): this.type = js.native
   def fadeOut(): this.type = js.native
 
-  def fadeTo(duration: JQuery.Duration, opacity: Double, easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeTo(duration: JQuery.Duration, opacity: Double, easing: String, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeTo(duration: JQuery.Duration, opacity: Double, easing: String, complete: js.Function0[Any]): this.type = js.native
   def fadeTo(duration: JQuery.Duration, opacity: Double, easing: String): this.type = js.native
-  def fadeTo(duration: JQuery.Duration, opacity: Double, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeTo(duration: JQuery.Duration, opacity: Double, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeTo(duration: JQuery.Duration, opacity: Double, complete: js.Function0[Any]): this.type = js.native
   def fadeTo(duration: JQuery.Duration, opacity: Double): this.type = js.native
 
-  def fadeToggle(duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeToggle(duration: JQuery.Duration, easing: String, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeToggle(duration: JQuery.Duration, easing: String, complete: js.Function0[Any]): this.type = js.native
   def fadeToggle(duration: JQuery.Duration, easing: String): this.type = js.native
-  def fadeToggle(duration: JQuery.Duration, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
-  def fadeToggle(easing: String, complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeToggle(duration: JQuery.Duration, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeToggle(duration: JQuery.Duration, complete: js.Function0[Any]): this.type = js.native
+  def fadeToggle(easing: String, complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeToggle(easing: String, complete: js.Function0[Any]): this.type = js.native
   def fadeToggle(duration: JQuery.Duration): this.type = js.native
   def fadeToggle(easing: String): this.type = js.native
-  def fadeToggle(complete: js.ThisFunction0[TElement, Unit]): this.type = js.native
+  def fadeToggle(complete: js.ThisFunction0[TElement, Any]): this.type = js.native
+  def fadeToggle(complete: js.Function0[Any]): this.type = js.native
   def fadeToggle(options: JQuery.EffectsOptions[TElement]): this.type = js.native
   def fadeToggle(): this.type = js.native
 
@@ -205,18 +284,30 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
 
   def first(): this.type = js.native
 
-  def focus(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def focus(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def focus(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def focus(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def focus(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def focus(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def focus(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def focus(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def focus(handler: Boolean): this.type = js.native
   def focus(): this.type = js.native
 
-  def focusin(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def focusin(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def focusin(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def focusin(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def focusin(handler: Boolean): this.type = js.native
-  def focusin(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def focusin(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def focusin(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def focusin(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def focusin(): this.type = js.native
 
-  def focusout(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def focusout(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def focusout(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def focusout(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def focusout(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def focusout(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def focusout(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def focusout(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def focusout(handler: Boolean): this.type = js.native
   def focusout(): this.type = js.native
 
@@ -240,11 +331,25 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def hide(options: JQuery.EffectsOptions[TElement]): this.type = js.native
   def hide(): this.type = js.native
 
-  def hover(handlerIn: Boolean, handlerOut: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def hover(handlerIn: Boolean, handlerOut: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def hover(handlerIn: Boolean, handlerOut: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def hover(handlerIn: Boolean, handlerOut: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def hover(handlerIn: Boolean, handlerOut: Boolean): this.type = js.native
-  def hover(handlerIn: JQuery.TypeEventHandler[TElement], handlerOut: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def hover(handlerIn: JQuery.TypeEventHandler[TElement], handlerOut: Boolean): this.type = js.native
-  def hover(handlerInOut: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler0[TElement], handlerOut: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler0[TElement], handlerOut: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler0[TElement], handlerOut: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler1[TElement], handlerOut: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler1[TElement], handlerOut: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler1[TElement], handlerOut: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler2[TElement], handlerOut: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler2[TElement], handlerOut: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler2[TElement], handlerOut: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler0[TElement], handlerOut: Boolean): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler1[TElement], handlerOut: Boolean): this.type = js.native
+  def hover(handlerIn: JQuery.TypeEventHandler2[TElement], handlerOut: Boolean): this.type = js.native
+  def hover(handlerInOut: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def hover(handlerInOut: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def hover(handlerInOut: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def hover(handlerInOut: Boolean): this.type = js.native
 
   def html(htmlString: JQuery.htmlString): this.type = js.native
@@ -275,18 +380,30 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def is(selection: JQuery[Element]): Boolean = js.native
   def is(elements: JQuery.TypeOrArray[Element]): Boolean = js.native
 
-  def keydown(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def keydown(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def keydown(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def keydown(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def keydown(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def keydown(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def keydown(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def keydown(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def keydown(handler: Boolean): this.type = js.native
   def keydown(): this.type = js.native
 
-  def keypress(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def keypress(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def keypress(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def keypress(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def keypress(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def keypress(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def keypress(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def keypress(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def keypress(handler: Boolean): this.type = js.native
   def keypress(): this.type = js.native
 
-  def keyup(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def keyup(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def keyup(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def keyup(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def keyup(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def keyup(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def keyup(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def keyup(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def keyup(handler: Boolean): this.type = js.native
   def keyup(): this.type = js.native
 
@@ -305,38 +422,66 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   @JSName("map") def flatMap[TReturn](callback: js.ThisFunction1[TElement, Int, js.Array[TReturn]]): JQuery[TReturn] = js.native
   @JSName("map") def flatMap[TReturn](callback: js.ThisFunction0[TElement, js.Array[TReturn]]): JQuery[TReturn] = js.native
 
-  def mousedown(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def mousedown(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mousedown(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mousedown(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mousedown(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def mousedown(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mousedown(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mousedown(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mousedown(handler: Boolean): this.type = js.native
   def mousedown(): this.type = js.native
 
-  def mouseenter(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mouseenter(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseenter(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseenter(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mouseenter(handler: Boolean): this.type = js.native
-  def mouseenter(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mouseenter(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseenter(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseenter(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mouseenter(): this.type = js.native
 
-  def mouseleave(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def mouseleave(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mouseleave(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseleave(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseleave(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def mouseleave(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseleave(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseleave(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mouseleave(handler: Boolean): this.type = js.native
   def mouseleave(): this.type = js.native
 
-  def mousemove(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def mousemove(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mousemove(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mousemove(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mousemove(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def mousemove(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mousemove(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mousemove(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mousemove(handler: Boolean): this.type = js.native
   def mousemove(): this.type = js.native
 
-  def mouseout(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def mouseout(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mouseout(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseout(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseout(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def mouseout(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseout(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseout(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mouseout(handler: Boolean): this.type = js.native
   def mouseout(): this.type = js.native
 
-  def mouseover(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def mouseover(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mouseover(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseover(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseover(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def mouseover(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseover(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseover(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mouseover(handler: Boolean): this.type = js.native
   def mouseover(): this.type = js.native
 
-  def mouseup(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def mouseup(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def mouseup(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseup(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseup(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def mouseup(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def mouseup(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def mouseup(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def mouseup(handler: Boolean): this.type = js.native
   def mouseup(): this.type = js.native
 
@@ -361,8 +506,13 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def not(function: js.ThisFunction1[TElement, Int, Boolean]): this.type = js.native
   def not(function: js.ThisFunction0[TElement,  Boolean]): this.type = js.native
 
-  def off(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def off(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def off(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def off(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def off(events: String, selector: JQuery.Selector, handler: Boolean): this.type = js.native
+  def off(events: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def off(events: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def off(events: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def off(events: String, handler: Boolean): this.type = js.native
   def off(events: String, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
   def off(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
@@ -376,21 +526,39 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
 
   def offsetParent(): this.type = js.native
 
-  def on(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def on(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler[TElement] | Boolean): this.type = js.native
-  def on(events: String, data: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def on(events: String, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def on(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def on(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def on(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def on(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def on(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def on(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def on(events: String, selector: JQuery.Selector, handler: Boolean): this.type = js.native
+  def on(events: String, data: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def on(events: String, data: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def on(events: String, data: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def on(events: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def on(events: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def on(events: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def on(events: String, handler: Boolean): this.type = js.native
   def on(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector, data: js.Any): this.type = js.native
   def on(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
   def on(events: JQuery.TypeEventHandlers[TElement], data: js.Any): this.type = js.native
   def on(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
 
-  def one(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def one(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler[TElement] ): this.type = js.native
+  def one(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def one(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def one(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def one(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler0[TElement] ): this.type = js.native
+  def one(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler1[TElement] ): this.type = js.native
+  def one(events: String, selector: JQuery.Selector, handler: JQuery.TypeEventHandler2[TElement] ): this.type = js.native
   def one(events: String, selector: JQuery.Selector, handler: Boolean): this.type = js.native
-  def one(events: String, data: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def one(events: String, handler: JQuery.TypeEventHandler[TElement] | Boolean): this.type = js.native
+  def one(events: String, data: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def one(events: String, data: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def one(events: String, data: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def one(events: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def one(events: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def one(events: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def one(events: String, handler: Boolean): this.type = js.native
   def one(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector, data: js.Any): this.type = js.native
   def one(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
   def one(events: JQuery.TypeEventHandlers[TElement], data: js.Any): this.type = js.native
@@ -486,13 +654,21 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def replaceWith(newContent: JQuery.Node): this.type = js.native
   def replaceWith(function: js.ThisFunction2[TElement, Int,JQuery.htmlString, JQuery.htmlString | JQuery[JQuery.Node] | JQuery.TypeOrArray[Element] | JQuery.Node]): this.type = js.native
 
-  def resize(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def resize(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def resize(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def resize(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def resize(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def resize(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def resize(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def resize(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def resize(handler: Boolean): this.type = js.native
   def resize(): this.type = js.native
 
-  def scroll(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def scroll(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def scroll(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def scroll(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def scroll(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def scroll(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def scroll(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def scroll(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def scroll(handler: Boolean): this.type = js.native
   def scroll(): this.type = js.native
 
@@ -502,8 +678,12 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def scrollTop(value: Double): this.type = js.native
   def scrollTop(): Double = js.native
 
-  def select(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def select(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def select(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def select(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def select(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def select(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def select(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def select(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def select(handler: Boolean): this.type = js.native
   def select(): this.type = js.native
 
@@ -562,8 +742,12 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def stop(clearQueue: Boolean): this.type = js.native
   def stop(): this.type = js.native
 
-  def submit(eventData: js.Any, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
-  def submit(handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def submit(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def submit(eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def submit(eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
+  def submit(handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  def submit(handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  def submit(handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def submit(handler: Boolean): this.type = js.native
   def submit(): this.type = js.native
 
@@ -600,7 +784,11 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def triggerHandler(event: JQuery.Event): js.Dynamic = js.native
 
   @deprecated("Use off", "jQuery 3.0")
-  def unbind(event: String, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def unbind(event: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  @deprecated("Use off", "jQuery 3.0")
+  def unbind(event: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  @deprecated("Use off", "jQuery 3.0")
+  def unbind(event: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   @deprecated("Use off", "jQuery 3.0")
   def unbind(event: String, handler: Boolean): this.type = js.native
   @deprecated("Use off", "jQuery 3.0")
@@ -611,7 +799,11 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def unbind(): this.type = js.native
 
   @deprecated("Use off", "jQuery 3.0")
-  def undelegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler[TElement]): this.type = js.native
+  def undelegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
+  @deprecated("Use off", "jQuery 3.0")
+  def undelegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
+  @deprecated("Use off", "jQuery 3.0")
+  def undelegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   @deprecated("Use off", "jQuery 3.0")
   def undelegate(selector: JQuery.Selector, eventType: String, handler: Boolean): this.type = js.native
   @deprecated("Use off", "jQuery 3.0")
@@ -661,8 +853,6 @@ object JQuery {
   type Duration = Double | String
   type EasingMethod = js.Function1[Double, Double]
   type Easings = js.Dictionary[EasingMethod]
-  type EventHandler[TCurrentTarget, TData] = EventHandlerBase[TCurrentTarget, TriggeredEvent[TCurrentTarget, TData, EventTarget, EventTarget]]
-  type EventHandlerBase[TContext, T] = js.ThisFunction1[TContext, T, js.Any]
   type htmlString = String
   type Node = Element | Text | Comment | DocumentFragment
   type PlainObject[T] = js.Dictionary[T]
@@ -673,10 +863,14 @@ object JQuery {
   type SpecialEventHooks = js.Dictionary[SpecialEventHook[EventTarget, _]]
   type Thenable[T] = js.Thenable[T]
   type Tweener[TElement] = js.ThisFunction2[Animation[TElement], String, Double, Tween[TElement]]
-  type TypeEventHandler[TCurrentTarget] = EventHandlerBase[TCurrentTarget, Event]
   type TypeOrArray[T] = T | js.Array[T]
-  type TypeEventHandlers[TCurrentTarget] = js.Dictionary[TypeEventHandler[TCurrentTarget] | Boolean]
   type ValHooks = js.Dictionary[ValHook]
+
+  type EventHandler[TCurrentTarget, TData] = js.ThisFunction1[TCurrentTarget, TriggeredEvent[TCurrentTarget, TData, EventTarget, EventTarget], Any]
+  type TypeEventHandler1[TCurrentTarget] = js.Function1[TriggeredEvent[TCurrentTarget, Unit, EventTarget, EventTarget], Any]
+  type TypeEventHandler2[TCurrentTarget] = js.ThisFunction1[TCurrentTarget, TriggeredEvent[TCurrentTarget, Unit, EventTarget, EventTarget], Any]
+  type TypeEventHandler0[TCurrentTarget] = js.Function0[Any]
+  type TypeEventHandlers[TCurrentTarget] = js.Dictionary[TypeEventHandler1[TCurrentTarget] | TypeEventHandler0[TCurrentTarget] | TypeEventHandler2[TCurrentTarget] | Boolean]
 
   trait PropHook[TElement] extends js.Object {
     var get: js.UndefOr[js.Function1[Tween[TElement], js.Any]] = js.undefined
