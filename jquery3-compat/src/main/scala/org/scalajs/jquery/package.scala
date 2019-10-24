@@ -1,6 +1,7 @@
 package org.scalajs
 
-import org.scalajs.dom.Element
+import org.scalajs.dom.html.Element
+import org.scalajs.dom.EventTarget
 
 import scala.scalajs.js
 
@@ -15,6 +16,7 @@ package object jquery {
   type JQuerySupport = net.exoego.scalajs.jquery.JQuerySupport
   type JQueryStatic = net.exoego.scalajs.jquery.JQueryStatic
   type JQueryEventObject = net.exoego.scalajs.jquery.JQuery.Event
+  type JQueryTriggeredEventObject = net.exoego.scalajs.jquery.JQuery.TriggeredEvent[Element, Unit, EventTarget, EventTarget]
   type JQueryTransport = net.exoego.scalajs.jquery.JQuery.Transport
   type JQueryXHR =  net.exoego.scalajs.jquery.JQuery.jqXHR
 }
