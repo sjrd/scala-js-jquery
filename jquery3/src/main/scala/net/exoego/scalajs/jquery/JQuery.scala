@@ -515,10 +515,10 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def off(events: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def off(events: String, handler: Boolean): this.type = js.native
   def off(events: String): this.type = js.native
-  def off(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
-  def off(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
   def off(event: JQuery.TriggeredEvent[TElement, js.Any, EventTarget, EventTarget]): this.type = js.native
   def off(): this.type = js.native
+  @JSName("off") def offEvents(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
+  @JSName("off") def offEvents(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
 
   def offset(coordinates: JQuery.CoordinatesPartial): this.type = js.native
   def offset(function: js.ThisFunction2[TElement, Int, JQuery.Coordinates, JQuery.CoordinatesPartial]): this.type = js.native
@@ -540,10 +540,10 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def on(events: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
   def on(events: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
   def on(events: String, handler: Boolean): this.type = js.native
-  def on(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector, data: js.Any): this.type = js.native
-  def on(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
-  def on(events: JQuery.TypeEventHandlers[TElement], data: js.Any): this.type = js.native
-  def on(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
+  @JSName("on") def onEvents(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector, data: js.Any): this.type = js.native
+  @JSName("on") def onEvents(events: JQuery.TypeEventHandlers[TElement], selector: JQuery.Selector): this.type = js.native
+  @JSName("on") def onEvents(events: JQuery.TypeEventHandlers[TElement], data: js.Any): this.type = js.native
+  @JSName("on") def onEvents(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
 
   def one(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
   def one(events: String, selector: JQuery.Selector, data: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
