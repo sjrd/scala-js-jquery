@@ -311,6 +311,7 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def focusout(handler: Boolean): this.type = js.native
   def focusout(): this.type = js.native
 
+  @JSName("get") def getOrUndefined(index: Int): js.UndefOr[TElement] = js.native
   def get(index: Int): TElement = js.native
   def get(): js.Array[TElement] = js.native
 
