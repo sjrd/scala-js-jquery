@@ -96,7 +96,7 @@ Using [Scala.js Bundler](https://scalacenter.github.io/scalajs-bundler)
 
 If you want to use Scala.js Bundler (sbt plugin must be enabled in `project/plugins.sbt`) to import jQuery as npm module, then add the following lines to your sbt build definition:
 
-```
+```scala
 enablePlugins(ScalaJSBundlerPlugin)
 
 libraryDependencies += "net.exoego" %%% "scalajs-jquery3" % "0.9.6"
@@ -109,7 +109,7 @@ npmDependencies in Compile ++= Seq(
 Then define a `jquery` object in your Scala code using the `@JSImport` annotation to get access to the exported `jQuery` object.
 A simple example on how to use the Scala.js JQuery facade this way is shown here:
 
-```
+```scala
 import net.exoego.scalajs.jquery.JQueryStatic
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
