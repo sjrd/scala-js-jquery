@@ -84,8 +84,6 @@ jQuery("button".on("click", () => println("hello world"))
     
 then enjoy the types available in `org.scalajs.jquery`.
 
-**Caution: Sources of `scalajs-jquery2` are just copy of [sjrd/scala-js-jquery](https://github.com/sjrd/scala-js-jquery) and published for newer Scala.js & Scala. [The actual supported jQuery version is unknown](https://github.com/sjrd/scala-js-jquery/issues/1#issuecomment-33003326). It is unlikely to fix/add type facade for this artifact by me (contribution are welcome).**
-
 This aritifcat is built and published for Scala.js 0.6.29 and later,
 and Scala.js 1.0.0-M8, with Scala 2.11, 2.12, 2.13. It will
 likely be published as is for later versions of Scala and Scala.js as
