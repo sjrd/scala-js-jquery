@@ -89,23 +89,23 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def before(contents: ContentLike*): this.type = js.native
   def before(function: js.ThisFunction2[TElement, Int, String, ContentLike]): this.type = js.native
 
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, handler: js.UndefOr[Null]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(eventType: String, preventBubble: Boolean): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def bind(events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
 
   def blur(eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
@@ -186,21 +186,21 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def delay(duration: JQuery.Duration, queueName: String): this.type = js.native
   def delay(duration: JQuery.Duration): this.type = js.native
 
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, eventType: String, eventData: js.Any, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, eventType: String, handler: Boolean): this.type = js.native
-  @deprecated("Use on", "jQuery 3.0")
+  @deprecated("Use on", "jQuery 3.0.0")
   def delegate(selector: JQuery.Selector, events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
 
   def dequeue(queueName: String): this.type = js.native
@@ -784,36 +784,36 @@ trait JQuery[TElement] extends js.Iterable[TElement] {
   def triggerHandler(event: JQuery.Event, extraParameters: js.Array[js.Any] | JQuery.PlainObject[js.Any]): js.Dynamic = js.native
   def triggerHandler(event: JQuery.Event): js.Dynamic = js.native
 
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def unbind(event: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def unbind(event: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def unbind(event: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def unbind(event: String, handler: Boolean): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def unbind(event: String): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def unbind(event: JQuery.TriggeredEvent[TElement, js.Any, EventTarget, EventTarget]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def unbind(): this.type = js.native
 
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler0[TElement]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler1[TElement]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(selector: JQuery.Selector, eventType: String, handler: JQuery.TypeEventHandler2[TElement]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(selector: JQuery.Selector, eventType: String, handler: Boolean): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(selector: JQuery.Selector, eventType: String): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(selector: JQuery.Selector, events: JQuery.TypeEventHandlers[TElement]): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(namespace: String): this.type = js.native
-  @deprecated("Use off", "jQuery 3.0")
+  @deprecated("Use off", "jQuery 3.0.0")
   def undelegate(): this.type = js.native
 
   def unwrap(selector: JQuery.Selector): this.type = js.native
@@ -934,7 +934,7 @@ object JQuery {
 
   @js.native
   trait Effects extends js.Object {
-    @deprecated("No longer needed in browsers that supports requestAnimationFrame", "jQuery 3.0")
+    @deprecated("No longer needed in browsers that supports requestAnimationFrame", "jQuery 3.0.0")
     var interval: Double = js.native
     var off: Boolean = js.native
     var step: PlainObject[AnimationHook[Node]] = js.native
