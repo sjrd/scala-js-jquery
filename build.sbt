@@ -2,7 +2,7 @@ lazy val root = project.in(file(".")).
   enablePlugins(ScalaJSPlugin)
 
 crossScalaVersions in ThisBuild := {
-  val allVersions = Seq("2.12.8", "2.11.12", "2.10.7", "2.13.0-RC2")
+  val allVersions = Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
   if (scalaJSVersion.startsWith("0.6."))
     allVersions
   else
@@ -19,18 +19,9 @@ version := "0.9.6-SNAPSHOT"
 organization := "be.doeraene"
 
 libraryDependencies +=
-  "org.scala-js" %%% "scalajs-dom" % "0.9.7"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.8"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
-
-// Work around https://github.com/scala-js/scala-js/issues/3612
-scalacOptions in (Compile, doc) := {
-  val prev = (scalacOptions in (Compile, doc)).value
-  if (scalaJSVersion.startsWith("0.6.") && scalaVersion.value.startsWith("2.13."))
-    prev.filter(_ != "-Xfatal-warnings")
-  else
-    prev
-}
 
 homepage := Some(url("http://scala-js.org/"))
 
