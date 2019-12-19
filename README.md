@@ -61,9 +61,8 @@ import scala.scalajs.js.annotation.JSImport
 @JSImport("jquery", JSImport.Namespace)
 object jquery extends JQueryStatic
 
-object Main extends js.JSApp {
-  @js.annotation.JSExport
-  override def main(): Unit = {
+object Main {
+  def main(args: Array[String]): Unit = {
     jquery("body").html("Hello world!")
   }
 }
