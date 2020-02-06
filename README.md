@@ -3,7 +3,7 @@ scala-js-jquery
 
 [![Build Status](https://travis-ci.org/sjrd/scala-js-jquery.svg?branch=master)](https://travis-ci.org/sjrd/scala-js-jquery)
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.29.svg)](https://www.scala-js.org/)
-[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0-RC2.svg)](https://www.scala-js.org/)
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0.svg)](https://www.scala-js.org/)
 
 Static types for the jQuery API for [Scala.js](http://www.scala-js.org/) programs.
 
@@ -19,9 +19,7 @@ Add the following to your sbt build definition:
 
 then enjoy the types available in `org.scalajs.jquery`.
 
-scalajs-jquery 0.9.6 is built and published for Scala.js 0.6.29 and later,
-and Scala.js 1.0.0-RC2, with Scala 2.10, 2.11, 2.12, 2.13. It will likely be
-published as is for later versions of Scala.js 1.x as well.
+scalajs-jquery 0.9.6 is built and published for Scala.js 0.6.29+ and Scala.js 1.0.0+, with Scala 2.10, 2.11, 2.12, 2.13.
 
 Include JavaScript
 ------------------
