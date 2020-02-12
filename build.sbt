@@ -19,7 +19,7 @@ version := "0.9.7-SNAPSHOT"
 organization := "be.doeraene"
 
 libraryDependencies +=
-  "org.scala-js" %%% "scalajs-dom" % "0.9.8"
+  "org.scala-js" %%% "scalajs-dom" % "1.0.0"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 
