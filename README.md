@@ -15,11 +15,11 @@ Usage
 
 Add the following to your sbt build definition:
 
-    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.6"
+    libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "1.0.0"
 
 then enjoy the types available in `org.scalajs.jquery`.
 
-scalajs-jquery 0.9.6 is built and published for Scala.js 0.6.29+ and Scala.js 1.0.0+, with Scala 2.10, 2.11, 2.12, 2.13.
+scalajs-jquery 1.0.0 is built and published for Scala.js 0.6.29+ and Scala.js 1.0.0+, with Scala 2.10, 2.11, 2.12 and 2.13.
 
 Include JavaScript
 ------------------
@@ -40,7 +40,7 @@ If you want to use Scala.js Bundler (sbt plugin must be enabled in `project/plug
 ```
 enablePlugins(ScalaJSBundlerPlugin)
 
-libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "0.9.6"
+libraryDependencies += "be.doeraene" %%% "scalajs-jquery" % "1.0.0"
 
 npmDependencies in Compile ++= Seq(
   "jquery" -> "2.1.3"
