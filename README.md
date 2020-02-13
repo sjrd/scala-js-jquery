@@ -2,7 +2,7 @@ scala-js-jquery
 ===============
 
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.29.svg)](https://www.scala-js.org/)
-[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0-M8.svg)](https://www.scala-js.org/)
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0.svg)](https://www.scala-js.org/)
 
 Static types for the jQuery API for [Scala.js](http://www.scala-js.org/) programs.
 
@@ -16,7 +16,7 @@ Usage
 Add the following to your sbt build definition:
 
 ```scala
-libraryDependencies += "net.exoego" %%% "scalajs-jquery3" % "0.9.6"
+libraryDependencies += "net.exoego" %%% "scalajs-jquery3" % "1.0.0"
 ```
 
 Enjoy types in Scala file:
@@ -29,7 +29,7 @@ jQuery("button".on("click", () => println("hello world"))
     
 This aritifcat is built and published for 
 
-* Scala.js 0.6.29 and later, and Scala.js 1.0.0-M8
+* Scala.js 0.6.32 and later, and Scala.js 1.0.0
 * with Scala 2.11, 2.12, 2.13
 * for [jQuery 3.4.1 based on this TypeScript definition and manually tweaked](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/b0503ac10547e9e087febf36e83c600a62c444bb/types/jquery)
 
@@ -51,7 +51,7 @@ But you should expect some minor rewrites, since
 Add the following to your sbt build definition:
 
 ```scala
-libraryDependencies += "net.exoego" %%% "scalajs-jquery3-compat" % "0.9.6"
+libraryDependencies += "net.exoego" %%% "scalajs-jquery3-compat" % "1.0.0"
 ```
 
 You may use type aliases in `org.scalajs.jquery`:
@@ -71,7 +71,7 @@ This is a drop-in replacement for original `"be.doeraene" %%% "scalajs-jquery" %
 Add the following to your sbt build definition:
 
 ```scala
-libraryDependencies += "net.exoego" %%% "scalajs-jquery2" % "0.9.6"
+libraryDependencies += "net.exoego" %%% "scalajs-jquery2" % "1.0.0"
 ```
 
 Enjoy types in Scala file:
@@ -99,7 +99,7 @@ If you want to use Scala.js Bundler (sbt plugin must be enabled in `project/plug
 ```scala
 enablePlugins(ScalaJSBundlerPlugin)
 
-libraryDependencies += "net.exoego" %%% "scalajs-jquery3" % "0.9.6"
+libraryDependencies += "net.exoego" %%% "scalajs-jquery3" % "1.0.0"
 
 npmDependencies in Compile ++= Seq(
   "jquery" -> "3.4.1"

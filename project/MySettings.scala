@@ -1,8 +1,6 @@
 import com.jsuereth.sbtpgp.SbtPgp.autoImport.PgpKeys
 import sbt.Keys._
 import sbt._
-import sbtrelease.ReleasePlugin.autoImport._
-import sbtrelease.ReleaseStateTransformations._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
 import xerial.sbt.Sonatype.SonatypeKeys
@@ -67,22 +65,6 @@ object MySettings {
     publishMavenStyle := true,
     publishArtifact in packageDoc := false,
     sources in (Compile, doc) := Seq.empty,
-    releaseIgnoreUntrackedFiles := true,
-    releasePublishArtifactsAction := PgpKeys.publishSigned.value,
-    releaseProcess := Seq[ReleaseStep](
-      checkSnapshotDependencies,
-      inquireVersions,
-      runClean,
-      runTest,
-      setReleaseVersion,
-      commitReleaseVersion,
-      tagRelease,
-      releaseStepCommandAndRemaining("+publishSigned"),
-      releaseStepCommand("sonatypeBundleUpload"),
-      releaseStepCommand("sonatypeReleaseAll"),
-      setNextVersion,
-      commitNextVersion
-    )
   )
 
 }
