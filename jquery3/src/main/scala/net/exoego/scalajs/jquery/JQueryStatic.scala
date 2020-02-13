@@ -5,8 +5,13 @@ import org.scalajs.dom.html.{ Document, Element }
 import org.scalajs.dom.raw.{ HTMLElement, HTMLSelectElement }
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+
+@js.native
+@JSImport(module = "jquery", name = "jQuery", globalFallback = "jQuery")
+object JQueryStatic extends JQueryStatic
 
 @js.native
 trait JQueryStatic extends js.Object {
