@@ -5,7 +5,7 @@ import org.scalajs.dom.{ Comment, DocumentFragment, ErrorEvent, EventTarget, Nod
 import org.scalajs.dom.html._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{ JSBracketAccess, JSGlobal, JSName }
+import scala.scalajs.js.annotation.{ JSBracketAccess, JSImport, JSName }
 import scala.scalajs.js.|
 
 @js.native
@@ -1246,7 +1246,7 @@ object JQuery {
     type ProgressCallback[TNotify] = Callback[TNotify]
 
     @js.native
-    @JSGlobal("Deferred")
+    @JSImport(module = "jquery", name = "Deferred", globalFallback = "Deferred")
     object Deferred extends js.Object {
       type CallbackBase[T, U, V, R] = js.Function
       type Callback[T] = js.Function
