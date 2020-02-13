@@ -3,8 +3,8 @@ package org.scalajs.jquery
 import scala.scalajs.js
 import org.scalajs.dom
 import org.scalajs.dom._
-import js.|
 
+import js.|
 import js.annotation.JSName
 
 @js.native

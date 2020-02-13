@@ -1,7 +1,10 @@
 package org.scalajs
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 
 package object jquery {
-  val jQuery: JQueryStatic = js.Dynamic.global.jQuery.asInstanceOf[JQueryStatic]
+  @js.native
+  @JSImport(module = "jquery", name = "jQuery", globalFallback = "jQuery")
+  object jQuery extends JQueryStatic
 }

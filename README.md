@@ -110,13 +110,7 @@ Then define a `jquery` object in your Scala code using the `@JSImport` annotatio
 A simple example on how to use the Scala.js JQuery facade this way is shown here:
 
 ```scala
-import net.exoego.scalajs.jquery.JQueryStatic
-import scala.scalajs.js
-import scala.scalajs.js.annotation.JSImport
-
-@js.native
-@JSImport("jquery", JSImport.Namespace)
-object jquery extends JQueryStatic
+import net.exoego.scalajs.jquery.{ JQueryStatic => jquery }
 
 object Main {
   override def main(): Unit = {

@@ -4,9 +4,12 @@ import org.scalajs.dom.html.Element
 import org.scalajs.dom.EventTarget
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 
 package object jquery {
-  val jQuery: JQueryStatic = js.Dynamic.global.jQuery.asInstanceOf[JQueryStatic]
+  @js.native
+  @JSImport(module = "jquery", name = "jQuery", globalFallback = "jQuery")
+  object jQuery extends JQueryStatic
 
   type JQuery = net.exoego.scalajs.jquery.JQuery[Element]
   type JQueryAjaxSettings = net.exoego.scalajs.jquery.JQuery.AjaxSettings
