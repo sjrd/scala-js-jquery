@@ -855,7 +855,7 @@ object JQuery {
   type EasingMethod = js.Function1[Double, Double]
   type Easings = js.Dictionary[EasingMethod]
   type htmlString = String
-  type Node = Element | Text | Comment | DocumentFragment
+  type Node = Element | Text | Comment | Document | DocumentFragment
   type PlainObject[T] = js.Dictionary[T]
   type PropHooks = js.Dictionary[PropHook[Node]]
   type Queue[TElement] = js.Array[QueueFunction[TElement]]
